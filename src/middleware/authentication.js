@@ -22,6 +22,9 @@ export default async (request, _res, next) => {
             }
         }
 
+        console.log('accessToken', accessToken);
+        
+
         if (!accessToken) {
             return httpError(next, new Error(responseMessage.customMessage('You are not authenticated')), req, 401)
         }
@@ -31,6 +34,9 @@ export default async (request, _res, next) => {
 
             const user = await userModel.findOne({ _id: userId }).select('-password')
 
+            console.log('user', user);
+            
+
             if (!user) {
                 return httpError(next, new Error(responseMessage.customMessage('You are not authenticated')), req, 401)
             }
@@ -38,7 +44,7 @@ export default async (request, _res, next) => {
             req.authenticatedUser = user
             return next()
         } catch (tokenError) {
-            return httpError(next, new Error(responseMessage.customMessage('You are not authenticated')), req, 401)
+            return httpError(next, new Error(responseMessage.customMessage('You are not authenticated ..')), req, 401)
         }
     } catch (err) {
         httpError(next, err, request, 500)
