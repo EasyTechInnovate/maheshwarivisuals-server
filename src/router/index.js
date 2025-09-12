@@ -6,6 +6,7 @@ import subscriptionRouter from './subscription.route.js';
 import adminRouter from './admin.route.js';
 import aggregatorRouter from './aggregator.route.js';
 import releaseRouter from './release.route.js';
+import advanceReleaseRouter from './advance-release.route.js';
 
 const router = Router();
 
@@ -16,6 +17,7 @@ router.use('/subscription', subscriptionRouter);
 router.use('/admin', adminRouter);
 router.use('/aggregator', aggregatorRouter);
 router.use('/releases', releaseRouter);
+router.use('/advance-releases', advanceReleaseRouter);
 
 
 export default router;

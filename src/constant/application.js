@@ -171,3 +171,22 @@ export const ESublabelMembershipStatus = Object.freeze({
     EXPIRED: 'expired',
     SUSPENDED: 'suspended'
 });
+
+export const EAdvancedReleaseType = Object.freeze({
+    SINGLE: 'single',
+    ALBUM: 'album',
+    MINI_ALBUM: 'mini_album',
+    RINGTONE_RELEASE: 'ringtone_release'
+});
+
+export const EReleasePricingTier = Object.freeze({
+    FRONT: 'front',
+    MID: 'mid',
+    BACK: 'back'
+});
+
+export const EAdvancedReleaseStep = Object.freeze({
+    COVER_ART_AND_RELEASE_INFO: 'cover_art_and_release_info',
+    TRACKS_AND_AUDIO: 'tracks_and_audio',
+    DELIVERY_AND_RIGHTS: 'delivery_and_rights'
+});

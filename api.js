@@ -125,6 +125,44 @@ const apiData = [
     ]
   },
   {
+    name: "Advanced Releases",
+    url: "/v1/advance-releases",
+    description: "Advanced release management with comprehensive metadata",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Advanced release service health check" },
+      { method: "POST", path: "/create", description: "Create new advanced release" },
+      { method: "PATCH", path: "/:releaseId/step1", description: "Update step 1 - Cover art & release info" },
+      { method: "PATCH", path: "/:releaseId/step2", description: "Update step 2 - Tracks & audio files" },
+      { method: "PATCH", path: "/:releaseId/step3", description: "Update step 3 - Delivery & rights" },
+      { method: "POST", path: "/:releaseId/submit", description: "Submit release for review" },
+      { method: "GET", path: "/my-releases", description: "Get user's advanced releases" },
+      { method: "GET", path: "/:releaseId", description: "Get advanced release details" },
+      { method: "DELETE", path: "/:releaseId", description: "Delete advanced release" },
+      { method: "POST", path: "/:releaseId/request-update", description: "Request release update" },
+      { method: "POST", path: "/:releaseId/request-takedown", description: "Request release takedown" }
+    ]
+  },
+  {
+    name: "Admin - Advanced Release Management",
+    url: "/v1/admin/advanced-releases",
+    description: "Admin management for advanced releases",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Advanced release admin service health check" },
+      { method: "GET", path: "/", description: "Get all advanced releases with filters" },
+      { method: "GET", path: "/pending-reviews", description: "Get advanced releases pending review" },
+      { method: "GET", path: "/stats", description: "Advanced release statistics" },
+      { method: "GET", path: "/:releaseId", description: "Get advanced release details (admin)" },
+      { method: "POST", path: "/:releaseId/approve", description: "Approve advanced release" },
+      { method: "POST", path: "/:releaseId/start-processing", description: "Start processing advanced release" },
+      { method: "POST", path: "/:releaseId/publish", description: "Publish advanced release" },
+      { method: "POST", path: "/:releaseId/go-live", description: "Make advanced release live" },
+      { method: "POST", path: "/:releaseId/reject", description: "Reject advanced release" },
+      { method: "POST", path: "/:releaseId/process-takedown", description: "Process takedown request" },
+      { method: "POST", path: "/:releaseId/provide-upc", description: "Provide UPC code for release" },
+      { method: "POST", path: "/:releaseId/provide-isrc", description: "Provide ISRC code for track" }
+    ]
+  },
+  {
     name: "Admin - Sublabels Management",
     url: "/v1/admin/sublabels",
     description: "Manage sublabels and user assignments",

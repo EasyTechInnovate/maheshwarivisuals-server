@@ -48,7 +48,6 @@ const sublabelSchema = new Schema({
     timestamps: true
 })
 
-sublabelSchema.index({ name: 1 })
 sublabelSchema.index({ membershipStatus: 1 })
 sublabelSchema.index({ isActive: 1 })
 

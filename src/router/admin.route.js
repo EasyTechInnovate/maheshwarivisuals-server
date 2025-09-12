@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import adminController from '../controller/Admin/admin.controller.js'
 import adminReleasesController from '../controller/Admin/admin-releases.controller.js'
+import adminAdvanceReleaseController from '../controller/Admin/admin-advance-release.controller.js'
 import adminSublabelsController from '../controller/Admin/admin-sublabels.controller.js'
 import validateRequest from '../middleware/validateRequest.js'
 import authentication from '../middleware/authentication.js'
@@ -8,6 +9,7 @@ import authorization from '../middleware/authorization.js'
 import adminSchemas from '../schema/admin.schema.js'
 import aggregatorSchemas from '../schema/aggregator.schema.js'
 import releaseSchemas from '../schema/release.schema.js'
+import advancedReleaseSchemas from '../schema/advanced-release.schema.js'
 import sublabelSchemas from '../schema/sublabel.schema.js'
 import { EUserRole } from '../constant/application.js'
 
@@ -192,6 +194,108 @@ router.route('/releases/:releaseId/process-takedown')
         authorization([EUserRole.ADMIN]),
         validateRequest(releaseSchemas.releaseIdParam),
         adminReleasesController.processTakeDown
+    )
+
+router.route('/advanced-releases')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.adminGetReleases, 'query'),
+        adminAdvanceReleaseController.getAllReleases
+    )
+
+router.route('/advanced-releases/self')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminAdvanceReleaseController.self
+    )
+
+router.route('/advanced-releases/pending-reviews')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminAdvanceReleaseController.getPendingReviews
+    )
+
+router.route('/advanced-releases/stats')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminAdvanceReleaseController.getReleaseStats
+    )
+
+router.route('/advanced-releases/:releaseId')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.getReleaseById),
+        adminAdvanceReleaseController.getReleaseById
+    )
+
+router.route('/advanced-releases/:releaseId/approve')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.getReleaseById),
+        validateRequest(advancedReleaseSchemas.adminNotes),
+        adminAdvanceReleaseController.approveForReview
+    )
+
+router.route('/advanced-releases/:releaseId/start-processing')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.getReleaseById),
+        adminAdvanceReleaseController.startProcessing
+    )
+
+router.route('/advanced-releases/:releaseId/publish')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.getReleaseById),
+        adminAdvanceReleaseController.publishRelease
+    )
+
+router.route('/advanced-releases/:releaseId/go-live')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.getReleaseById),
+        adminAdvanceReleaseController.goLive
+    )
+
+router.route('/advanced-releases/:releaseId/reject')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.rejectRelease),
+        adminAdvanceReleaseController.rejectRelease
+    )
+
+router.route('/advanced-releases/:releaseId/process-takedown')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.getReleaseById),
+        adminAdvanceReleaseController.processTakeDown
+    )
+
+router.route('/advanced-releases/:releaseId/provide-upc')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.provideUPC),
+        adminAdvanceReleaseController.provideUPC
+    )
+
+router.route('/advanced-releases/:releaseId/provide-isrc')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(advancedReleaseSchemas.provideISRC),
+        adminAdvanceReleaseController.provideISRC
     )
 
 router.route('/sublabels')
