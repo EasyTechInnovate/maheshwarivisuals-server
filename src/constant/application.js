@@ -190,3 +190,9 @@ export const EAdvancedReleaseStep = Object.freeze({
     TRACKS_AND_AUDIO: 'tracks_and_audio',
     DELIVERY_AND_RIGHTS: 'delivery_and_rights'
 });
+
+export const EMonthManagementType = Object.freeze({
+    ANALYTICS: 'analytics',
+    ROYALTY: 'royalty',
+    BONUS: 'bonus'
+});

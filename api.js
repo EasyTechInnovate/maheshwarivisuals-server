@@ -177,6 +177,31 @@ const apiData = [
       { method: "GET", path: "/users/:userId/sublabels", description: "Get user's assigned sublabels" },
       { method: "POST", path: "/users/:userId/sublabels", description: "Toggle user sublabels assignment" }
     ]
+  },
+  {
+    name: "Admin - Month Management",
+    url: "/v1/admin/months",
+    description: "Manage months for analytics, royalty, and bonus reporting",
+    endpoints: [
+      { method: "POST", path: "/", description: "Create new month for specific type" },
+      { method: "GET", path: "/", description: "Get all months with pagination & filters" },
+      { method: "GET", path: "/stats", description: "Get month statistics by type" },
+      { method: "GET", path: "/type/:type", description: "Get months by type (analytics/royalty/bonus)" },
+      { method: "GET", path: "/:id", description: "Get month details by ID" },
+      { method: "PATCH", path: "/:id", description: "Update month information" },
+      { method: "DELETE", path: "/:id", description: "Deactivate month (soft delete)" },
+      { method: "PATCH", path: "/:id/toggle-status", description: "Toggle month active status" }
+    ]
+  },
+  {
+    name: "Month Management",
+    url: "/v1/months",
+    description: "User access to active months for reporting",
+    endpoints: [
+      { method: "GET", path: "/active", description: "Get all active months grouped by type" },
+      { method: "GET", path: "/type/:type/active", description: "Get active months by type" },
+      { method: "GET", path: "/:id", description: "Get month details by ID (active only)" }
+    ]
   }
 ];
 

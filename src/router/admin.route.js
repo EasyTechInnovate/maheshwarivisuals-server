@@ -3,6 +3,7 @@ import adminController from '../controller/Admin/admin.controller.js'
 import adminReleasesController from '../controller/Admin/admin-releases.controller.js'
 import adminAdvanceReleaseController from '../controller/Admin/admin-advance-release.controller.js'
 import adminSublabelsController from '../controller/Admin/admin-sublabels.controller.js'
+import adminMonthManagementController from '../controller/Months/admin-month-management.controller.js'
 import validateRequest from '../middleware/validateRequest.js'
 import authentication from '../middleware/authentication.js'
 import authorization from '../middleware/authorization.js'
@@ -12,6 +13,7 @@ import releaseSchemas from '../schema/release.schema.js'
 import advancedReleaseSchemas from '../schema/advanced-release.schema.js'
 import sublabelSchemas from '../schema/sublabel.schema.js'
 import { EUserRole } from '../constant/application.js'
+import { createMonthSchema, getAllMonthsSchema, getMonthsByTypeSchema, monthParamsSchema, updateMonthSchema } from '../schema/month-management.schema.js'
 
 const router = Router()
 
@@ -360,6 +362,64 @@ router.route('/users/:userId/sublabels')
         authorization([EUserRole.ADMIN]),
         validateRequest(sublabelSchemas.toggleUserSublabels),
         adminSublabelsController.toggleUserSublabels
+    )
+
+// Month Management Routes
+router.route('/months')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(createMonthSchema),
+        adminMonthManagementController.createMonth
+    )
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(getAllMonthsSchema),
+        adminMonthManagementController.getAllMonths
+    )
+
+router.route('/months/stats')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminMonthManagementController.getMonthStats
+    )
+
+router.route('/months/type/:type')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(getMonthsByTypeSchema),
+        adminMonthManagementController.getMonthsByType
+    )
+
+router.route('/months/:id')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(monthParamsSchema),
+        adminMonthManagementController.getMonthById
+    )
+    .patch(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(updateMonthSchema),
+        adminMonthManagementController.updateMonth
+    )
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(monthParamsSchema),
+        adminMonthManagementController.deleteMonth
+    )
+
+router.route('/months/:id/toggle-status')
+    .patch(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(monthParamsSchema),
+        adminMonthManagementController.toggleMonthStatus
     )
 
 export default router

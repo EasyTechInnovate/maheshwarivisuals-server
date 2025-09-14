@@ -7,6 +7,7 @@ import adminRouter from './admin.route.js';
 import aggregatorRouter from './aggregator.route.js';
 import releaseRouter from './release.route.js';
 import advanceReleaseRouter from './advance-release.route.js';
+import monthManagementRouter from './month-management.route.js';
 
 const router = Router();
 
@@ -18,6 +19,7 @@ router.use('/admin', adminRouter);
 router.use('/aggregator', aggregatorRouter);
 router.use('/releases', releaseRouter);
 router.use('/advance-releases', advanceReleaseRouter);
+router.use('/months', monthManagementRouter);
 
 
 export default router;

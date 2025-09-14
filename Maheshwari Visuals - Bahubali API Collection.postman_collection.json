@@ -2328,6 +2328,384 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Admin - Month Management",
+			"item": [
+				{
+					"name": "Create Month",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"month\": \"Jan-25\",\n    \"displayName\": \"January 2025\",\n    \"type\": \"analytics\",\n    \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get All Months",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "type",
+									"value": "analytics",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Jan",
+									"disabled": true
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Month Stats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months",
+								"stats"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Months by Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months/type/analytics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months",
+								"type",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "includeInactive",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Month by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months/{{month_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months",
+								"{{month_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Month",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"January 2025 Updated\",\n    \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months/{{month_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months",
+								"{{month_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Month",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months/{{month_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months",
+								"{{month_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Toggle Month Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/months/{{month_id}}/toggle-status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"months",
+								"{{month_id}}",
+								"toggle-status"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Month Management",
+			"item": [
+				{
+					"name": "Get All Active Months",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/months/active",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"months",
+								"active"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Active Months by Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/months/type/analytics/active",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"months",
+								"type",
+								"analytics",
+								"active"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Month by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/months/{{month_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"months",
+								"{{month_id}}"
+							]
+						}
+					}
+				}
+			]
 		}
 	],
 	"event": [
@@ -2394,6 +2772,11 @@
 		},
 		{
 			"key": "sublabel_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "month_id",
 			"value": "",
 			"type": "string"
 		}
