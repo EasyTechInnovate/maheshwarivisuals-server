@@ -11131,3 +11131,4972 @@
         }
     }
 }
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-12T22:46:09.927Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-12T22:46:09.931Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-12T22:46:10.386Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-12T22:46:10.387Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:46:25.858Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc3MTcxODUsImV4cCI6MTc1NzgwMzU4NX0.4tv44JGbYUJkV1lRzRSTLYE24Qvx4KJrYMx81iZN85c",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc3MTcxODUsImV4cCI6MTc1ODMyMTk4NX0.zhVyAlBb0i-Otl1rzMTJdTfOTp_qVDkOLsaHQlNVodA"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:47:10.003Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c0027257093f43b8452ec8",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": false,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-09T10:33:22.241Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGMwMDI3MjU3MDkzZjQzYjg0NTJlYzgiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc3MTcyMjksImV4cCI6MTc1NzgwMzYyOX0.S3qzBRxDEhz_mw4WSAKrEdR1mIuKM4mbpleo9-_LAxQ",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGMwMDI3MjU3MDkzZjQzYjg0NTJlYzgiLCJpYXQiOjE3NTc3MTcyMjksImV4cCI6MTc1ODMyMjAyOX0.BXTWQBiorvFZQdEJsBFQf6eQXDUAS4XZY37X_kGk3uI"
+            },
+            "accountStatus": {
+                "emailVerified": false,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "verify_email",
+                "redirectTo": "/verify-email"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:47:52.495Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/resend-verification"
+        },
+        "message": "If an unverified account with this email exists, a verification email has been sent",
+        "data": {
+            "verificationUrl": "http://localhost:3000/verify-email?token=620b3612b5da65831317ade489ac1dc257a23e4dc610ef1e35b4ac6281f2a6e1",
+            "verificationCode": "897702"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-12T22:55:00.759Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-12T22:55:00.764Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-12T22:55:01.205Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-12T22:55:01.206Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:55:11.663Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/resend-verification"
+        },
+        "message": "If an unverified account with this email exists, a verification email has been sent",
+        "data": {
+            "verificationUrl": "http://localhost:3000/verify-email?token=36505c39b364884859370318816a2876a0ccaca4e6d0cc066b5ea141cfdefbc1",
+            "verificationCode": "889634"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:56:19.574Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/verify-email"
+        },
+        "message": "Email verified successfully",
+        "data": {
+            "user": {
+                "_id": "68c0027257093f43b8452ec8",
+                "accountId": "MV/A/01",
+                "emailAddress": "john.artist@example.com",
+                "isEmailVerified": true
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:56:27.168Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/verify-kyc"
+        },
+        "message": "KYC information verified successfully",
+        "data": {
+            "kycStatus": "verified",
+            "submittedAt": "2025-09-12T22:56:27.105Z",
+            "verifiedAt": "2025-09-12T22:56:27.105Z",
+            "isCompleted": true,
+            "kyc": {
+                "documents": {
+                    "aadhaar": {
+                        "number": "1234-5678-9012",
+                        "documentUrl": "https://example.com/aadhaar.pdf",
+                        "verified": true
+                    },
+                    "pan": {
+                        "number": "ABCDE1234F",
+                        "documentUrl": "https://example.com/pan.pdf",
+                        "verified": true
+                    }
+                },
+                "bankDetails": {
+                    "accountNumber": "1234567890",
+                    "ifscCode": "HDFC0001234",
+                    "accountHolderName": "User Name",
+                    "bankName": "HDFC Bank",
+                    "verified": true
+                },
+                "upiDetails": {
+                    "upiId": "user@paytm",
+                    "verified": true
+                }
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:57:06.173Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c0027257093f43b8452ec8",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-09T10:33:22.241Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": true,
+                    "status": "verified",
+                    "submittedAt": "2025-09-12T22:56:27.105Z",
+                    "verifiedAt": "2025-09-12T22:56:27.106Z",
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGMwMDI3MjU3MDkzZjQzYjg0NTJlYzgiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc3MTc4MjYsImV4cCI6MTc1NzgwNDIyNn0.7IQ8rhwRqymFv2SE6coTGfiiZURGhDe5I0pcE4_hceM",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGMwMDI3MjU3MDkzZjQzYjg0NTJlYzgiLCJpYXQiOjE3NTc3MTc4MjYsImV4cCI6MTc1ODMyMjYyNn0.U9nUBMFv0q_IyWB3kZMaiIW3g_HQ6uP_fmpF-E8iOP8"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": true,
+                "kycStatus": "verified",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "choose_subscription",
+                "redirectTo": "/subscription"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:57:40.890Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/subscription/plans"
+        },
+        "message": "The operation has been successful",
+        "data": [
+            {
+                "planId": "maheshwari_best_value",
+                "name": "Maheshwari Best Value",
+                "description": "Best value plan with all essential features",
+                "price": {
+                    "current": 1499,
+                    "original": 1999
+                },
+                "currency": "INR",
+                "interval": "month",
+                "features": {
+                    "revenueShare": {
+                        "description": null
+                    },
+                    "unlimitedReleases": true,
+                    "artistProfile": true,
+                    "collaborateWithOthers": true,
+                    "metaContentId": true,
+                    "youtubeContentId": true,
+                    "analyticsDemo": true,
+                    "spotifyDiscoveryMode": true,
+                    "assistedPlaylists": true,
+                    "preReleasePromo": true,
+                    "freeUpcCode": true,
+                    "freeIsrcCode": true,
+                    "lifetimeAvailability": true,
+                    "supportHours": "24_hours",
+                    "businessHours": true,
+                    "liveSupport": true,
+                    "dailyArtistDistribution": true,
+                    "worldwideAvailability": true,
+                    "analyticsCenter": true
+                },
+                "isPopular": false,
+                "isBestValue": true,
+                "discountedPrice": 1499
+            }
+        ]
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T22:59:31.606Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/create-payment-intent"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "transactionId": "TXN_1757717971562_W8L4Y232Z",
+            "orderId": "order_TXN_1757717971562_W8L4Y232Z",
+            "amount": 1499,
+            "currency": "INR",
+            "planId": "maheshwari_best_value",
+            "planName": "Maheshwari Best Value",
+            "razorpayOrderId": "razorpay_order_1757717971606"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:00:50.402Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/mock-verify-payment"
+        },
+        "message": "Mock payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_best_value",
+                "status": "active",
+                "validUntil": "2025-10-12T23:00:50.373Z",
+                "planName": "Maheshwari Best Value"
+            },
+            "transaction": {
+                "transactionId": "TXN_MOCK_1757718050321_EG12MBHFL",
+                "amount": 1499,
+                "status": "completed",
+                "isMockPayment": true
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:04:11.268Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/verify-payment"
+        },
+        "message": "Payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_best_value",
+                "status": "active",
+                "validUntil": "2025-10-12T23:04:11.239Z",
+                "planName": "Maheshwari Best Value"
+            },
+            "transaction": {
+                "transactionId": "TXN_1757717971562_W8L4Y232Z",
+                "amount": 1499,
+                "status": "completed"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:04:32.836Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/subscription/my-subscription"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "hasSubscription": true,
+            "subscription": {
+                "planId": "maheshwari_best_value",
+                "planName": "Maheshwari Best Value",
+                "status": "active",
+                "validFrom": "2025-09-12T23:04:11.239Z",
+                "validUntil": "2025-10-12T23:04:11.239Z",
+                "isActive": true,
+                "autoRenewal": true,
+                "lastPaymentDate": "2025-09-12T23:04:11.239Z",
+                "nextPaymentDate": null
+            },
+            "featureAccess": {
+                "canUploadMusic": true,
+                "canAccessAnalytics": true,
+                "canManageDistribution": true,
+                "uploadLimit": 0,
+                "monthlyUploadsUsed": 0,
+                "lastUploadReset": "2025-09-09T10:33:22.241Z"
+            },
+            "plan": {
+                "name": "Maheshwari Best Value",
+                "price": {
+                    "current": 1499,
+                    "original": 1999
+                },
+                "features": {
+                    "revenueShare": {
+                        "description": null
+                    },
+                    "unlimitedReleases": true,
+                    "artistProfile": true,
+                    "collaborateWithOthers": true,
+                    "metaContentId": true,
+                    "youtubeContentId": true,
+                    "analyticsDemo": true,
+                    "spotifyDiscoveryMode": true,
+                    "assistedPlaylists": true,
+                    "preReleasePromo": true,
+                    "freeUpcCode": true,
+                    "freeIsrcCode": true,
+                    "lifetimeAvailability": true,
+                    "supportHours": "24_hours",
+                    "businessHours": true,
+                    "liveSupport": true,
+                    "dailyArtistDistribution": true,
+                    "worldwideAvailability": true,
+                    "analyticsCenter": true
+                },
+                "limits": {
+                    "maxUploads": -1,
+                    "maxCollaborators": 10,
+                    "maxDistributionChannels": 50
+                }
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:04:53.544Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/subscription/payment-history?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "transactions": [
+                {
+                    "transactionId": "TXN_MOCK_1757718050321_EG12MBHFL",
+                    "amount": 1499,
+                    "currency": "INR",
+                    "planId": "maheshwari_best_value",
+                    "description": "Mock payment for Maheshwari Best Value",
+                    "status": "completed",
+                    "paymentMethod": null,
+                    "gateway": "mock",
+                    "createdAt": "2025-09-12T23:00:50.322Z",
+                    "completedAt": "2025-09-12T23:00:50.321Z",
+                    "isMockPayment": true
+                },
+                {
+                    "transactionId": "TXN_1757717971562_W8L4Y232Z",
+                    "amount": 1499,
+                    "currency": "INR",
+                    "planId": "maheshwari_best_value",
+                    "description": "Subscription to Maheshwari Best Value",
+                    "status": "completed",
+                    "paymentMethod": null,
+                    "gateway": "razorpay",
+                    "createdAt": "2025-09-12T22:59:31.564Z",
+                    "completedAt": "2025-09-12T23:04:11.177Z",
+                    "isMockPayment": false
+                }
+            ],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 1,
+                "totalTransactions": 2,
+                "hasNextPage": false,
+                "hasPreviousPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:06:01.480Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c0027257093f43b8452ec8",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-09T10:33:22.241Z"
+                },
+                "hasActiveSubscription": true,
+                "subscription": {
+                    "planId": "maheshwari_best_value",
+                    "status": "active",
+                    "validFrom": "2025-09-12T23:04:11.239Z",
+                    "validUntil": "2025-10-12T23:04:11.239Z",
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": "razorpay_sub_1757718251239",
+                    "lastPaymentDate": "2025-09-12T23:04:11.239Z",
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": true,
+                    "status": "verified",
+                    "submittedAt": "2025-09-12T22:56:27.105Z",
+                    "verifiedAt": "2025-09-12T22:56:27.106Z",
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGMwMDI3MjU3MDkzZjQzYjg0NTJlYzgiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc3MTgzNjEsImV4cCI6MTc1NzgwNDc2MX0.CETUCyTTiYhzhXMuGYuXVWVi-sAhKDBN2Jvqpv9OJJk",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGMwMDI3MjU3MDkzZjQzYjg0NTJlYzgiLCJpYXQiOjE3NTc3MTgzNjEsImV4cCI6MTc1ODMyMzE2MX0.RLmTD9AXQd2r8geeX2HZpHYZkNcjE5CCQPeu4Y8_a3M"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": true,
+                "kycStatus": "verified",
+                "hasActiveSubscription": true,
+                "subscriptionStatus": "active",
+                "nextStep": "dashboard",
+                "redirectTo": "/dashboard"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:06:38.294Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/plans?includeInactive=true"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "plans": [
+                {
+                    "_id": "68beabc234cf3f5b4f10cb9a",
+                    "planId": "maheshwari_best_value",
+                    "name": "Maheshwari Best Value",
+                    "description": "Best value plan with all essential features",
+                    "price": {
+                        "current": 1499,
+                        "original": 1999
+                    },
+                    "currency": "INR",
+                    "interval": "month",
+                    "intervalCount": 1,
+                    "features": {
+                        "revenueShare": {
+                            "description": null
+                        },
+                        "unlimitedReleases": true,
+                        "artistProfile": true,
+                        "collaborateWithOthers": true,
+                        "metaContentId": true,
+                        "youtubeContentId": true,
+                        "analyticsDemo": true,
+                        "spotifyDiscoveryMode": true,
+                        "assistedPlaylists": true,
+                        "preReleasePromo": true,
+                        "freeUpcCode": true,
+                        "freeIsrcCode": true,
+                        "lifetimeAvailability": true,
+                        "supportHours": "24_hours",
+                        "businessHours": true,
+                        "liveSupport": true,
+                        "dailyArtistDistribution": true,
+                        "worldwideAvailability": true,
+                        "analyticsCenter": true
+                    },
+                    "isActive": true,
+                    "isPopular": false,
+                    "isBestValue": true,
+                    "displayOrder": 2,
+                    "limits": {
+                        "maxUploads": -1,
+                        "maxCollaborators": 10,
+                        "maxDistributionChannels": 50
+                    },
+                    "trial": {
+                        "enabled": true,
+                        "days": 7
+                    },
+                    "discount": {
+                        "enabled": false,
+                        "percentage": 0,
+                        "validUntil": null
+                    },
+                    "createdAt": "2025-09-08T10:11:14.416Z",
+                    "updatedAt": "2025-09-08T10:11:14.416Z"
+                }
+            ],
+            "totalPlans": 1
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:06:43.888Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/plans"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "_id": "68c4a783b67295cebf6fcc01",
+            "planId": "maheshwari_premium",
+            "name": "Maheshwari Premium",
+            "description": "Premium plan with all features",
+            "price": {
+                "current": 1999,
+                "original": 2499
+            },
+            "currency": "INR",
+            "interval": "month",
+            "intervalCount": 1,
+            "features": {
+                "unlimitedReleases": true,
+                "artistProfile": true,
+                "collaborateWithOthers": true,
+                "metaContentId": true,
+                "youtubeContentId": true,
+                "analyticsDemo": true,
+                "spotifyDiscoveryMode": true,
+                "assistedPlaylists": true,
+                "preReleasePromo": true,
+                "freeUpcCode": true,
+                "freeIsrcCode": true,
+                "lifetimeAvailability": true,
+                "supportHours": "24_hours",
+                "businessHours": true,
+                "liveSupport": true,
+                "dailyArtistDistribution": true,
+                "worldwideAvailability": true,
+                "analyticsCenter": true,
+                "revenueShare": {
+                    "description": null
+                }
+            },
+            "isActive": true,
+            "isPopular": false,
+            "isBestValue": true,
+            "displayOrder": 2,
+            "limits": {
+                "maxUploads": -1,
+                "maxCollaborators": 10,
+                "maxDistributionChannels": 50
+            },
+            "trial": {
+                "enabled": true,
+                "days": 7
+            },
+            "discount": {
+                "enabled": false,
+                "percentage": 0,
+                "validUntil": null
+            },
+            "createdAt": "2025-09-12T23:06:43.861Z"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-12T23:08:53.011Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/mock-verify-payment"
+        },
+        "message": "Mock payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_premium",
+                "status": "active",
+                "validUntil": "2025-10-12T23:08:52.981Z",
+                "planName": "Maheshwari Premium"
+            },
+            "transaction": {
+                "transactionId": "TXN_MOCK_1757718532917_XO2ELI443",
+                "amount": 1999,
+                "status": "completed",
+                "isMockPayment": true
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-13T03:10:45.312Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-13T03:10:45.316Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-13T03:10:45.607Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-13T03:10:45.608Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-13T03:11:05.866Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-13T03:11:05.874Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-13T03:11:06.226Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-13T03:11:06.227Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:12:20.704Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/create-payment-intent"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "transactionId": "TXN_1757733140652_GWWH6U615",
+            "orderId": "order_TXN_1757733140652_GWWH6U615",
+            "amount": 1999,
+            "currency": "INR",
+            "planId": "maheshwari_premium",
+            "planName": "Maheshwari Premium",
+            "razorpayOrderId": "razorpay_order_1757733140703"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:13:53.532Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/mock-verify-payment"
+        },
+        "message": "Mock payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_premium",
+                "status": "active",
+                "validUntil": "2025-10-13T03:13:53.350Z",
+                "planName": "Maheshwari Premium"
+            },
+            "transaction": {
+                "transactionId": "TXN_MOCK_1757733233209_4KTFGMLZ0",
+                "amount": 1999,
+                "status": "completed",
+                "isMockPayment": true
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:18:59.215Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/verify-payment"
+        },
+        "message": "Payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_premium",
+                "status": "active",
+                "validUntil": "2025-10-13T03:18:59.146Z",
+                "planName": "Maheshwari Premium"
+            },
+            "transaction": {
+                "transactionId": "TXN_1757733140652_GWWH6U615",
+                "amount": 1999,
+                "status": "completed"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:19:19.474Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/plans?includeInactive=true"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "plans": [
+                {
+                    "_id": "68c4a783b67295cebf6fcc01",
+                    "planId": "maheshwari_premium",
+                    "name": "Maheshwari Premium",
+                    "description": "Premium plan with all features",
+                    "price": {
+                        "current": 1999,
+                        "original": 2499
+                    },
+                    "currency": "INR",
+                    "interval": "month",
+                    "intervalCount": 1,
+                    "features": {
+                        "revenueShare": {
+                            "description": null
+                        },
+                        "unlimitedReleases": true,
+                        "artistProfile": true,
+                        "collaborateWithOthers": true,
+                        "metaContentId": true,
+                        "youtubeContentId": true,
+                        "analyticsDemo": true,
+                        "spotifyDiscoveryMode": true,
+                        "assistedPlaylists": true,
+                        "preReleasePromo": true,
+                        "freeUpcCode": true,
+                        "freeIsrcCode": true,
+                        "lifetimeAvailability": true,
+                        "supportHours": "24_hours",
+                        "businessHours": true,
+                        "liveSupport": true,
+                        "dailyArtistDistribution": true,
+                        "worldwideAvailability": true,
+                        "analyticsCenter": true
+                    },
+                    "isActive": true,
+                    "isPopular": false,
+                    "isBestValue": true,
+                    "displayOrder": 2,
+                    "limits": {
+                        "maxUploads": -1,
+                        "maxCollaborators": 10,
+                        "maxDistributionChannels": 50
+                    },
+                    "trial": {
+                        "enabled": true,
+                        "days": 7
+                    },
+                    "discount": {
+                        "enabled": false,
+                        "percentage": 0,
+                        "validUntil": null
+                    },
+                    "createdAt": "2025-09-12T23:06:43.861Z",
+                    "updatedAt": "2025-09-12T23:06:43.861Z"
+                },
+                {
+                    "_id": "68beabc234cf3f5b4f10cb9a",
+                    "planId": "maheshwari_best_value",
+                    "name": "Maheshwari Best Value",
+                    "description": "Best value plan with all essential features",
+                    "price": {
+                        "current": 1499,
+                        "original": 1999
+                    },
+                    "currency": "INR",
+                    "interval": "month",
+                    "intervalCount": 1,
+                    "features": {
+                        "revenueShare": {
+                            "description": null
+                        },
+                        "unlimitedReleases": true,
+                        "artistProfile": true,
+                        "collaborateWithOthers": true,
+                        "metaContentId": true,
+                        "youtubeContentId": true,
+                        "analyticsDemo": true,
+                        "spotifyDiscoveryMode": true,
+                        "assistedPlaylists": true,
+                        "preReleasePromo": true,
+                        "freeUpcCode": true,
+                        "freeIsrcCode": true,
+                        "lifetimeAvailability": true,
+                        "supportHours": "24_hours",
+                        "businessHours": true,
+                        "liveSupport": true,
+                        "dailyArtistDistribution": true,
+                        "worldwideAvailability": true,
+                        "analyticsCenter": true
+                    },
+                    "isActive": true,
+                    "isPopular": false,
+                    "isBestValue": true,
+                    "displayOrder": 2,
+                    "limits": {
+                        "maxUploads": -1,
+                        "maxCollaborators": 10,
+                        "maxDistributionChannels": 50
+                    },
+                    "trial": {
+                        "enabled": true,
+                        "days": 7
+                    },
+                    "discount": {
+                        "enabled": false,
+                        "percentage": 0,
+                        "validUntil": null
+                    },
+                    "createdAt": "2025-09-08T10:11:14.416Z",
+                    "updatedAt": "2025-09-08T10:11:14.416Z"
+                }
+            ],
+            "totalPlans": 2
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:19:59.294Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc3MzM1OTksImV4cCI6MTc1NzgxOTk5OX0.uBbS3DC0jgYPQ4n6VYv7_naVNE_XBEny526pyNPWdcE",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc3MzM1OTksImV4cCI6MTc1ODMzODM5OX0.nCo-4jrIzGI3aVxx2IB_ctKdm6bn9tnOt2990lys8bU"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:22:02.368Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/register"
+        },
+        "message": "Account created successfully",
+        "data": {
+            "user": {
+                "_id": "68c4e359feaf2dbdd4ef6400",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": false,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-13T03:22:01.083Z"
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc3MzM3MjIsImV4cCI6MTc1NzgyMDEyMn0.KHloxIdm9vydZftgeghk39Uh4LlXzm4a0UQ2dSeUDLs",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJpYXQiOjE3NTc3MzM3MjIsImV4cCI6MTc1ODMzODUyMn0.8xraJ8F-Kx-2nb1fO6sqKygdAqopjBRcTMCtTUkVsF4"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T03:22:08.850Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c4e359feaf2dbdd4ef6400",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": false,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-13T03:22:01.083Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc3MzM3MjgsImV4cCI6MTc1NzgyMDEyOH0._1AIqVpBG0JGczr5iWbw44L3P7XUgTknaixLtuDZ4xM",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJpYXQiOjE3NTc3MzM3MjgsImV4cCI6MTc1ODMzODUyOH0.YvTnFpExCZoBoArm_Q2Fa8DuG6_Xv-ldywRiQXe8KhY"
+            },
+            "accountStatus": {
+                "emailVerified": false,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "verify_email",
+                "redirectTo": "/verify-email"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-13T05:59:58.057Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-13T05:59:58.064Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-13T05:59:59.111Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-13T05:59:59.112Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:24:09.305Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/revenue/summary?startDate=2024-01-01&endDate=2024-12-31"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "total": {
+                "totalAmount": 0,
+                "totalTransactions": 0,
+                "avgTransactionValue": 0
+            },
+            "byPlan": [],
+            "byMonth": []
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:24:14.948Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/users/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "totalUsers": 2,
+            "activeSubscribers": 0,
+            "subscriptionRate": "0.00",
+            "usersByType": [
+                {
+                    "userType": "artist",
+                    "count": 1
+                },
+                {
+                    "userType": "label",
+                    "count": 0
+                },
+                {
+                    "userType": "aggregator",
+                    "count": 0
+                }
+            ],
+            "recentRegistrations": [
+                {
+                    "_id": "68c4e359feaf2dbdd4ef6400",
+                    "fullName": "John Artist",
+                    "emailAddress": "john.artist@example.com",
+                    "userType": "artist",
+                    "registeredAt": "2025-09-13T03:22:01.085Z"
+                },
+                {
+                    "_id": "68bef3763b5dd834f409946a",
+                    "fullName": "Admin User",
+                    "emailAddress": "admin@maheshwarivisuals.com",
+                    "registeredAt": "2025-09-08T15:17:10.118Z"
+                }
+            ]
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:24:29.977Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/subscriptions/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "byPlan": [],
+            "byStatus": [
+                {
+                    "status": "inactive",
+                    "count": 2
+                }
+            ],
+            "growth": []
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:25:23.965Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/plans?includeInactive=true"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "plans": [
+                {
+                    "_id": "68c4a783b67295cebf6fcc01",
+                    "planId": "maheshwari_premium",
+                    "name": "Maheshwari Premium",
+                    "description": "Premium plan with all features",
+                    "price": {
+                        "current": 1999,
+                        "original": 2499
+                    },
+                    "currency": "INR",
+                    "interval": "month",
+                    "intervalCount": 1,
+                    "features": {
+                        "revenueShare": {
+                            "description": null
+                        },
+                        "unlimitedReleases": true,
+                        "artistProfile": true,
+                        "collaborateWithOthers": true,
+                        "metaContentId": true,
+                        "youtubeContentId": true,
+                        "analyticsDemo": true,
+                        "spotifyDiscoveryMode": true,
+                        "assistedPlaylists": true,
+                        "preReleasePromo": true,
+                        "freeUpcCode": true,
+                        "freeIsrcCode": true,
+                        "lifetimeAvailability": true,
+                        "supportHours": "24_hours",
+                        "businessHours": true,
+                        "liveSupport": true,
+                        "dailyArtistDistribution": true,
+                        "worldwideAvailability": true,
+                        "analyticsCenter": true
+                    },
+                    "isActive": true,
+                    "isPopular": false,
+                    "isBestValue": true,
+                    "displayOrder": 2,
+                    "limits": {
+                        "maxUploads": -1,
+                        "maxCollaborators": 10,
+                        "maxDistributionChannels": 50
+                    },
+                    "trial": {
+                        "enabled": true,
+                        "days": 7
+                    },
+                    "discount": {
+                        "enabled": false,
+                        "percentage": 0,
+                        "validUntil": null
+                    },
+                    "createdAt": "2025-09-12T23:06:43.861Z",
+                    "updatedAt": "2025-09-12T23:06:43.861Z"
+                },
+                {
+                    "_id": "68beabc234cf3f5b4f10cb9a",
+                    "planId": "maheshwari_best_value",
+                    "name": "Maheshwari Best Value",
+                    "description": "Best value plan with all essential features",
+                    "price": {
+                        "current": 1499,
+                        "original": 1999
+                    },
+                    "currency": "INR",
+                    "interval": "month",
+                    "intervalCount": 1,
+                    "features": {
+                        "revenueShare": {
+                            "description": null
+                        },
+                        "unlimitedReleases": true,
+                        "artistProfile": true,
+                        "collaborateWithOthers": true,
+                        "metaContentId": true,
+                        "youtubeContentId": true,
+                        "analyticsDemo": true,
+                        "spotifyDiscoveryMode": true,
+                        "assistedPlaylists": true,
+                        "preReleasePromo": true,
+                        "freeUpcCode": true,
+                        "freeIsrcCode": true,
+                        "lifetimeAvailability": true,
+                        "supportHours": "24_hours",
+                        "businessHours": true,
+                        "liveSupport": true,
+                        "dailyArtistDistribution": true,
+                        "worldwideAvailability": true,
+                        "analyticsCenter": true
+                    },
+                    "isActive": true,
+                    "isPopular": false,
+                    "isBestValue": true,
+                    "displayOrder": 2,
+                    "limits": {
+                        "maxUploads": -1,
+                        "maxCollaborators": 10,
+                        "maxDistributionChannels": 50
+                    },
+                    "trial": {
+                        "enabled": true,
+                        "days": 7
+                    },
+                    "discount": {
+                        "enabled": false,
+                        "percentage": 0,
+                        "validUntil": null
+                    },
+                    "createdAt": "2025-09-08T10:11:14.416Z",
+                    "updatedAt": "2025-09-08T10:11:14.416Z"
+                }
+            ],
+            "totalPlans": 2
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:26:27.788Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/mock-verify-payment"
+        },
+        "message": "Mock payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_premium",
+                "status": "active",
+                "validUntil": "2025-10-13T06:26:27.715Z",
+                "planName": "Maheshwari Premium"
+            },
+            "transaction": {
+                "transactionId": "TXN_MOCK_1757744787563_QD804IW1V",
+                "amount": 1999,
+                "status": "completed",
+                "isMockPayment": true
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:26:39.360Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/create-payment-intent"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "transactionId": "TXN_1757744799298_NPJLTDPDQ",
+            "orderId": "order_TXN_1757744799298_NPJLTDPDQ",
+            "amount": 1999,
+            "currency": "INR",
+            "planId": "maheshwari_premium",
+            "planName": "Maheshwari Premium",
+            "razorpayOrderId": "razorpay_order_1757744799360"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:28:00.261Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/subscription/verify-payment"
+        },
+        "message": "Payment verified and subscription activated",
+        "data": {
+            "subscription": {
+                "planId": "maheshwari_premium",
+                "status": "active",
+                "validUntil": "2025-10-13T06:28:00.157Z",
+                "planName": "Maheshwari Premium"
+            },
+            "transaction": {
+                "transactionId": "TXN_1757744799298_NPJLTDPDQ",
+                "amount": 1999,
+                "status": "completed"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:29:20.859Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/plans/maheshwari_premium"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "_id": "68c4a783b67295cebf6fcc01",
+            "planId": "maheshwari_premium",
+            "name": "Maheshwari Premium",
+            "description": "Premium plan with all features",
+            "price": {
+                "current": 1999,
+                "original": 2499
+            },
+            "currency": "INR",
+            "interval": "month",
+            "intervalCount": 1,
+            "features": {
+                "revenueShare": {
+                    "description": null
+                },
+                "unlimitedReleases": true,
+                "artistProfile": true,
+                "collaborateWithOthers": true,
+                "metaContentId": true,
+                "youtubeContentId": true,
+                "analyticsDemo": true,
+                "spotifyDiscoveryMode": true,
+                "assistedPlaylists": true,
+                "preReleasePromo": true,
+                "freeUpcCode": true,
+                "freeIsrcCode": true,
+                "lifetimeAvailability": true,
+                "supportHours": "24_hours",
+                "businessHours": true,
+                "liveSupport": true,
+                "dailyArtistDistribution": true,
+                "worldwideAvailability": true,
+                "analyticsCenter": true
+            },
+            "isActive": true,
+            "isPopular": false,
+            "isBestValue": true,
+            "displayOrder": 2,
+            "limits": {
+                "maxUploads": -1,
+                "maxCollaborators": 10,
+                "maxDistributionChannels": 50
+            },
+            "trial": {
+                "enabled": true,
+                "days": 7
+            },
+            "discount": {
+                "enabled": false,
+                "percentage": 0,
+                "validUntil": null
+            },
+            "analytics": {
+                "subscriberCount": 1,
+                "totalRevenue": 9995,
+                "totalTransactions": 5
+            },
+            "createdAt": "2025-09-12T23:06:43.861Z",
+            "updatedAt": "2025-09-12T23:06:43.861Z"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:29:28.020Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/admin/plans/maheshwari_premium/activate"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "planId": "maheshwari_premium",
+            "isActive": true,
+            "message": "Plan activated successfully"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:29:40.396Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PUT",
+            "url": "/v1/admin/plans/maheshwari_premium"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "_id": "68c4a783b67295cebf6fcc01",
+            "planId": "maheshwari_premium",
+            "name": "Updated Plan Name",
+            "description": "Premium plan with all features",
+            "price": {
+                "current": 599,
+                "original": 699
+            },
+            "currency": "INR",
+            "interval": "month",
+            "intervalCount": 1,
+            "features": {
+                "revenueShare": {
+                    "description": null
+                },
+                "unlimitedReleases": false,
+                "artistProfile": true,
+                "collaborateWithOthers": true,
+                "metaContentId": true,
+                "youtubeContentId": true,
+                "analyticsDemo": true,
+                "spotifyDiscoveryMode": true,
+                "assistedPlaylists": true,
+                "preReleasePromo": true,
+                "freeUpcCode": true,
+                "freeIsrcCode": true,
+                "lifetimeAvailability": true,
+                "supportHours": "48_hours",
+                "businessHours": true,
+                "liveSupport": true,
+                "dailyArtistDistribution": true,
+                "worldwideAvailability": true,
+                "analyticsCenter": true
+            },
+            "isActive": true,
+            "isPopular": true,
+            "isBestValue": true,
+            "displayOrder": 2,
+            "limits": {
+                "maxUploads": -1,
+                "maxCollaborators": 10,
+                "maxDistributionChannels": 50
+            },
+            "trial": {
+                "enabled": true,
+                "days": 7
+            },
+            "discount": {
+                "enabled": false,
+                "percentage": 0,
+                "validUntil": null
+            },
+            "updatedAt": "2025-09-13T06:29:40.203Z"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:29:52.863Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/admin/plans/maheshwari_premium/deactivate"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "planId": "maheshwari_premium",
+            "isActive": false,
+            "message": "Plan deactivated successfully"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:30:10.738Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/admin/plans/maheshwari_premium/deactivate"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "planId": "maheshwari_premium",
+            "isActive": false,
+            "message": "Plan deactivated successfully"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:31:53.469Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/self"
+        },
+        "message": "Admin service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:32:26.257Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/admin/plans/maheshwari_premium/deactivate"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "planId": "maheshwari_premium",
+            "isActive": false,
+            "message": "Plan deactivated successfully"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:32:54.023Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/aggregator/applications?status=pending&page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "applications": [
+                {
+                    "_id": "68beacdb34cf3f5b4f10cbab",
+                    "firstName": "John",
+                    "lastName": "Aggregator",
+                    "emailAddress": "john.aggregator@example.com",
+                    "phoneNumber": "+91-9876543210",
+                    "companyName": "Music Distribution Co",
+                    "websiteLink": "https://musicdistribution.com",
+                    "instagramUrl": "https://instagram.com/musicdist",
+                    "facebookUrl": "https://facebook.com/musicdist",
+                    "linkedinUrl": null,
+                    "youtubeLink": "https://youtube.com/musicdist",
+                    "popularReleaseLinks": [
+                        "https://spotify.com/track1",
+                        "https://spotify.com/track2"
+                    ],
+                    "popularArtistLinks": [
+                        "https://spotify.com/artist1"
+                    ],
+                    "associatedLabels": [
+                        "Label One",
+                        "Label Two"
+                    ],
+                    "totalReleases": 500,
+                    "releaseFrequency": "monthly",
+                    "monthlyReleasePlans": 50,
+                    "briefInfo": "We are a leading music distribution company with 5+ years of experience in the industry. We work with over 100 artists and labels.",
+                    "additionalServices": [
+                        "music_marketing",
+                        "youtube_cms"
+                    ],
+                    "howDidYouKnow": "social_media",
+                    "howDidYouKnowOther": null,
+                    "applicationStatus": "pending",
+                    "adminNotes": null,
+                    "reviewedAt": null,
+                    "reviewedBy": null,
+                    "isAccountCreated": false,
+                    "createdAccountId": null,
+                    "createdAt": "2025-09-08T10:15:55.835Z",
+                    "updatedAt": "2025-09-08T10:15:55.835Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 1,
+                "totalApplications": 1,
+                "hasNextPage": false,
+                "hasPrevPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:34:20.175Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/self"
+        },
+        "message": "Admin Releases service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:34:26.775Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:34:37.795Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/pending-reviews?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:34:53.585Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "statusCounts": {
+                "draft": 0,
+                "submitted": 0,
+                "underReview": 0,
+                "processing": 0,
+                "published": 0,
+                "live": 0,
+                "rejected": 0,
+                "takeDown": 0,
+                "updateRequest": 0
+            },
+            "trackTypeCounts": {
+                "single": 0,
+                "album": 0
+            },
+            "totalReleases": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:35:07.230Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T06:40:32.588Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/releases/self"
+        },
+        "message": "Basic Release service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-13T14:40:05.147Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-13T14:40:05.151Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-13T14:40:05.408Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-13T14:40:05.409Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:40:46.903Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc3NzQ0NDYsImV4cCI6MTc1Nzg2MDg0Nn0.4utQmt5tAKp1Duxg5fHKi5h3dHT81mhNzRbxL_Qc-mA",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc3NzQ0NDYsImV4cCI6MTc1ODM3OTI0Nn0.Bkd0SI3b0WHil4LoRWQMuFPeHi-7CE74IurCZE4IJMI"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:40:56.611Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/subscriptions/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "byPlan": [
+                {
+                    "planId": "maheshwari_premium",
+                    "planName": "Updated Plan Name",
+                    "count": 1
+                }
+            ],
+            "byStatus": [
+                {
+                    "status": "active",
+                    "count": 1
+                },
+                {
+                    "status": "inactive",
+                    "count": 1
+                }
+            ],
+            "growth": [
+                {
+                    "period": "2025-09",
+                    "newSubscriptions": 1
+                }
+            ]
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:41:02.491Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/users/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "totalUsers": 2,
+            "activeSubscribers": 1,
+            "subscriptionRate": "50.00",
+            "usersByType": [
+                {
+                    "userType": "artist",
+                    "count": 1
+                },
+                {
+                    "userType": "label",
+                    "count": 0
+                },
+                {
+                    "userType": "aggregator",
+                    "count": 0
+                }
+            ],
+            "recentRegistrations": [
+                {
+                    "_id": "68c4e359feaf2dbdd4ef6400",
+                    "fullName": "John Artist",
+                    "emailAddress": "john.artist@example.com",
+                    "userType": "artist",
+                    "registeredAt": "2025-09-13T03:22:01.085Z"
+                },
+                {
+                    "_id": "68bef3763b5dd834f409946a",
+                    "fullName": "Admin User",
+                    "emailAddress": "admin@maheshwarivisuals.com",
+                    "registeredAt": "2025-09-08T15:17:10.118Z"
+                }
+            ]
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:41:08.917Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/revenue/summary?startDate=2024-01-01&endDate=2024-12-31"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "total": {
+                "totalAmount": 0,
+                "totalTransactions": 0,
+                "avgTransactionValue": 0
+            },
+            "byPlan": [],
+            "byMonth": []
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:41:42.415Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/aggregator/applications?status=pending&page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "applications": [
+                {
+                    "_id": "68beacdb34cf3f5b4f10cbab",
+                    "firstName": "John",
+                    "lastName": "Aggregator",
+                    "emailAddress": "john.aggregator@example.com",
+                    "phoneNumber": "+91-9876543210",
+                    "companyName": "Music Distribution Co",
+                    "websiteLink": "https://musicdistribution.com",
+                    "instagramUrl": "https://instagram.com/musicdist",
+                    "facebookUrl": "https://facebook.com/musicdist",
+                    "linkedinUrl": null,
+                    "youtubeLink": "https://youtube.com/musicdist",
+                    "popularReleaseLinks": [
+                        "https://spotify.com/track1",
+                        "https://spotify.com/track2"
+                    ],
+                    "popularArtistLinks": [
+                        "https://spotify.com/artist1"
+                    ],
+                    "associatedLabels": [
+                        "Label One",
+                        "Label Two"
+                    ],
+                    "totalReleases": 500,
+                    "releaseFrequency": "monthly",
+                    "monthlyReleasePlans": 50,
+                    "briefInfo": "We are a leading music distribution company with 5+ years of experience in the industry. We work with over 100 artists and labels.",
+                    "additionalServices": [
+                        "music_marketing",
+                        "youtube_cms"
+                    ],
+                    "howDidYouKnow": "social_media",
+                    "howDidYouKnowOther": null,
+                    "applicationStatus": "pending",
+                    "adminNotes": null,
+                    "reviewedAt": null,
+                    "reviewedBy": null,
+                    "isAccountCreated": false,
+                    "createdAccountId": null,
+                    "createdAt": "2025-09-08T10:15:55.835Z",
+                    "updatedAt": "2025-09-08T10:15:55.835Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 1,
+                "totalApplications": 1,
+                "hasNextPage": false,
+                "hasPrevPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:41:59.160Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/aggregator/applications/68beacdb34cf3f5b4f10cbab"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "_id": "68beacdb34cf3f5b4f10cbab",
+                "firstName": "John",
+                "lastName": "Aggregator",
+                "emailAddress": "john.aggregator@example.com",
+                "phoneNumber": "+91-9876543210",
+                "companyName": "Music Distribution Co",
+                "websiteLink": "https://musicdistribution.com",
+                "instagramUrl": "https://instagram.com/musicdist",
+                "facebookUrl": "https://facebook.com/musicdist",
+                "linkedinUrl": null,
+                "youtubeLink": "https://youtube.com/musicdist",
+                "popularReleaseLinks": [
+                    "https://spotify.com/track1",
+                    "https://spotify.com/track2"
+                ],
+                "popularArtistLinks": [
+                    "https://spotify.com/artist1"
+                ],
+                "associatedLabels": [
+                    "Label One",
+                    "Label Two"
+                ],
+                "totalReleases": 500,
+                "releaseFrequency": "monthly",
+                "monthlyReleasePlans": 50,
+                "briefInfo": "We are a leading music distribution company with 5+ years of experience in the industry. We work with over 100 artists and labels.",
+                "additionalServices": [
+                    "music_marketing",
+                    "youtube_cms"
+                ],
+                "howDidYouKnow": "social_media",
+                "howDidYouKnowOther": null,
+                "applicationStatus": "pending",
+                "adminNotes": null,
+                "reviewedAt": null,
+                "reviewedBy": null,
+                "isAccountCreated": false,
+                "createdAccountId": null,
+                "createdAt": "2025-09-08T10:15:55.835Z",
+                "updatedAt": "2025-09-08T10:15:55.835Z",
+                "__v": 0
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:42:06.099Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/admin/aggregator/applications/68beacdb34cf3f5b4f10cbab/review"
+        },
+        "message": "Application approved successfully",
+        "data": {
+            "application": {
+                "_id": "68beacdb34cf3f5b4f10cbab",
+                "companyName": "Music Distribution Co",
+                "emailAddress": "john.aggregator@example.com",
+                "applicationStatus": "approved",
+                "adminNotes": "Great portfolio and experience. Approved for aggregator account.",
+                "reviewedAt": "2025-09-13T14:42:06.066Z"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:42:48.389Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/self"
+        },
+        "message": "Admin Releases service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:42:55.909Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:43:03.624Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/pending-reviews?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T14:43:11.265Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "statusCounts": {
+                "draft": 0,
+                "submitted": 0,
+                "underReview": 0,
+                "processing": 0,
+                "published": 0,
+                "live": 0,
+                "rejected": 0,
+                "takeDown": 0,
+                "updateRequest": 0
+            },
+            "trackTypeCounts": {
+                "single": 0,
+                "album": 0
+            },
+            "totalReleases": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T15:00:21.042Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T15:00:38.691Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/pending-reviews?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T15:00:52.723Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "statusCounts": {
+                "draft": 0,
+                "submitted": 0,
+                "underReview": 0,
+                "processing": 0,
+                "published": 0,
+                "live": 0,
+                "rejected": 0,
+                "takeDown": 0,
+                "updateRequest": 0
+            },
+            "trackTypeCounts": {
+                "single": 0,
+                "album": 0
+            },
+            "totalReleases": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T16:24:25.314Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/releases/self"
+        },
+        "message": "Basic Release service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T17:10:04.502Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc3ODM0MDQsImV4cCI6MTc1Nzg2OTgwNH0.4sKiuYW0hrJqiITUpoH4E49VfgA5Kh4tmJ5FN5SdeWk",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc3ODM0MDQsImV4cCI6MTc1ODM4ODIwNH0.iNfTZbWUUnJaTMe8-Z8RIbmt7zbIFc-ibYKuYi_sq-4"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-13T17:12:02.749Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c4e359feaf2dbdd4ef6400",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": false,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-13T03:22:01.083Z"
+                },
+                "hasActiveSubscription": true,
+                "subscription": {
+                    "planId": "maheshwari_premium",
+                    "status": "active",
+                    "validFrom": "2025-09-13T06:28:00.159Z",
+                    "validUntil": "2025-10-13T06:28:00.157Z",
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": "razorpay_sub_1757744880158",
+                    "lastPaymentDate": "2025-09-13T06:28:00.159Z",
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc3ODM1MjIsImV4cCI6MTc1Nzg2OTkyMn0.zJa5VHUbQNf9_I3c9DRiHHtOTL1If_-ab8ayO621sY4",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJpYXQiOjE3NTc3ODM1MjIsImV4cCI6MTc1ODM4ODMyMn0.EYIN56g1KGbPxc-FEFIuYvOYAybWhPDA_T_Eq9WwIvE"
+            },
+            "accountStatus": {
+                "emailVerified": false,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": true,
+                "subscriptionStatus": "active",
+                "nextStep": "verify_email",
+                "redirectTo": "/verify-email"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-15T16:14:25.268Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-15T16:14:25.271Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-15T16:14:25.501Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-15T16:14:25.502Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:15:21.329Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc5NTI5MjEsImV4cCI6MTc1ODAzOTMyMX0.o1qceu0_LCikrzfXaQgIToUohYYaXdVaR7I2Rb0f000",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc5NTI5MjEsImV4cCI6MTc1ODU1NzcyMX0.MC0CluDKBX9sOW-ANpmlRersCGb0IqQ1Bl90khoqDQo"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:16:12.730Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c4e359feaf2dbdd4ef6400",
+                "accountId": "MV/A/01",
+                "firstName": "John",
+                "lastName": "Artist",
+                "emailAddress": "john.artist@example.com",
+                "role": "user",
+                "userType": "artist",
+                "isEmailVerified": false,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-13T03:22:01.083Z"
+                },
+                "hasActiveSubscription": true,
+                "subscription": {
+                    "planId": "maheshwari_premium",
+                    "status": "active",
+                    "validFrom": "2025-09-13T06:28:00.159Z",
+                    "validUntil": "2025-10-13T06:28:00.157Z",
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": "razorpay_sub_1757744880158",
+                    "lastPaymentDate": "2025-09-13T06:28:00.159Z",
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJlbWFpbEFkZHJlc3MiOiJqb2huLmFydGlzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwidXNlclR5cGUiOiJhcnRpc3QiLCJpYXQiOjE3NTc5NTI5NzIsImV4cCI6MTc1ODAzOTM3Mn0.Dg4eWfjZr6JIfmsqHsfEdg2hhAr_i1JsG9PmJfpYaok",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0ZTM1OWZlYWYyZGJkZDRlZjY0MDAiLCJpYXQiOjE3NTc5NTI5NzIsImV4cCI6MTc1ODU1Nzc3Mn0.LEkUVE2Q0KdACZKP4rxAjFYJuBOYINNe8zUhrPYP7HQ"
+            },
+            "accountStatus": {
+                "emailVerified": false,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": true,
+                "subscriptionStatus": "active",
+                "nextStep": "verify_email",
+                "redirectTo": "/verify-email"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:16:20.287Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/releases/my-releases?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:16:42.686Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/create"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "trackType": "single",
+            "currentStep": "cover_art_and_info",
+            "releaseStatus": "draft",
+            "completionPercentage": 0,
+            "nextStep": {
+                "nextStep": "step1",
+                "nextStepTitle": "Cover Art & Release Information",
+                "nextStepDescription": "Upload cover art and provide release details like name, genre, and label information",
+                "canProceedToNextStep": false,
+                "requiredFields": [
+                    "coverArt.imageUrl",
+                    "releaseInfo.releaseName",
+                    "releaseInfo.genre"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false,
+                    "trackCount": 0
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Release created successfully! Start by uploading cover art and providing release information."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:16:59.106Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/releases/RE-B-S-001/step1"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "currentStep": "audio_files_and_tracks",
+            "step1Completed": true,
+            "completionPercentage": 33,
+            "nextStep": {
+                "nextStep": "step2",
+                "nextStepTitle": "Audio Files & Track Information",
+                "nextStepDescription": "Upload audio files and provide track details like composer, lyricist, and singer information",
+                "canProceedToNextStep": true,
+                "requiredFields": [
+                    "tracks[].trackName",
+                    "tracks[].genre",
+                    "tracks[].audioFiles[]"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:16:59.066Z",
+                    "hasData": true
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false,
+                    "trackCount": 0
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Step 1 completed! Ready to proceed to step 2."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:17:05.250Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/releases/RE-B-S-001/step2"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "currentStep": "release_settings",
+            "step2Completed": true,
+            "tracksCount": 1,
+            "completionPercentage": 67,
+            "nextStep": {
+                "nextStep": "step3",
+                "nextStepTitle": "Release Settings",
+                "nextStepDescription": "Set release date, select territories, distribution partners, and provide copyright information",
+                "canProceedToNextStep": true,
+                "requiredFields": [
+                    "releaseDate",
+                    "territorialRights",
+                    "partnerSelection",
+                    "copyrights"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:16:59.066Z",
+                    "hasData": true
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:17:05.213Z",
+                    "hasData": true,
+                    "trackCount": 1
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Step 2 completed! Ready to proceed to step 3."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:17:55.806Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/releases/RE-B-S-001/step3"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "currentStep": "release_settings",
+            "step3Completed": true,
+            "readyForSubmission": true,
+            "completionPercentage": 100,
+            "nextStep": {
+                "nextStep": "submit",
+                "nextStepTitle": "Submit for Review",
+                "nextStepDescription": "All steps completed! Submit your release for admin review and processing",
+                "canProceedToNextStep": true,
+                "requiredFields": []
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:16:59.066Z",
+                    "hasData": true
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:17:05.213Z",
+                    "hasData": true,
+                    "trackCount": 1
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:17:55.756Z",
+                    "hasData": true
+                }
+            },
+            "message": "Step 3 completed! All steps done. Ready to submit for review."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:18:09.962Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/RE-B-S-001/submit"
+        },
+        "message": "Release submitted for review successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "submitted",
+            "submittedAt": "2025-09-15T16:18:09.915Z"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:18:47.307Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [
+                {
+                    "releaseId": "RE-B-S-001",
+                    "releaseName": "My Amazing Song",
+                    "trackType": "single",
+                    "releaseStatus": "submitted",
+                    "completionPercentage": 100,
+                    "stepsCompleted": "3/3",
+                    "isReadyForSubmission": true,
+                    "user": {
+                        "name": "John Artist",
+                        "email": "john.artist@example.com",
+                        "userType": "artist"
+                    },
+                    "createdAt": "2025-09-15T16:16:42.634Z",
+                    "submittedAt": "2025-09-15T16:18:09.915Z",
+                    "publishedAt": null,
+                    "liveAt": null
+                }
+            ],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 1,
+                "totalItems": 1,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:18:53.941Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/pending-reviews?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [
+                {
+                    "releaseId": "RE-B-S-001",
+                    "releaseName": "My Amazing Song",
+                    "trackType": "single",
+                    "releaseStatus": "submitted",
+                    "user": {
+                        "name": "John Artist",
+                        "email": "john.artist@example.com",
+                        "userType": "artist"
+                    },
+                    "submittedAt": "2025-09-15T16:18:09.915Z",
+                    "updateRequest": {
+                        "requestedAt": null
+                    }
+                }
+            ],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 1,
+                "totalItems": 1,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:19:10.501Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/approve"
+        },
+        "message": "Release approved for review successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "under_review",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:19:10.466Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:19:19.731Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/start-processing"
+        },
+        "message": "Release processing started successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "processing",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:19:19.701Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:19:26.218Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/publish"
+        },
+        "message": "Release published successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "published",
+            "publishedAt": "2025-09-15T16:19:26.138Z",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:19:26.139Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:19:34.523Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/go-live"
+        },
+        "message": "Release is now live successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "live",
+            "liveAt": "2025-09-15T16:19:34.489Z",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:19:34.489Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:19:43.546Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/RE-B-S-001/request-update"
+        },
+        "message": "Update request submitted successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "update_request",
+            "updateRequest": {
+                "requestedAt": "2025-09-15T16:19:43.516Z",
+                "requestReason": "Need to update track listing",
+                "requestedChanges": "Want to add one more track to the album and update cover art"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:22:48.525Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/v1/releases/RE-B-S-001"
+        },
+        "message": "The resource has been deleted successfully",
+        "data": {
+            "releaseId": "RE-B-S-001"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:23:45.608Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/create"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "releaseId": "RE-B-S-002",
+            "trackType": "single",
+            "currentStep": "cover_art_and_info",
+            "releaseStatus": "draft",
+            "completionPercentage": 0,
+            "nextStep": {
+                "nextStep": "step1",
+                "nextStepTitle": "Cover Art & Release Information",
+                "nextStepDescription": "Upload cover art and provide release details like name, genre, and label information",
+                "canProceedToNextStep": false,
+                "requiredFields": [
+                    "coverArt.imageUrl",
+                    "releaseInfo.releaseName",
+                    "releaseInfo.genre"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false,
+                    "trackCount": 0
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Release created successfully! Start by uploading cover art and providing release information."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:24:36.723Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/create"
+        },
+        "message": "The resource has been created successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "trackType": "single",
+            "currentStep": "cover_art_and_info",
+            "releaseStatus": "draft",
+            "completionPercentage": 0,
+            "nextStep": {
+                "nextStep": "step1",
+                "nextStepTitle": "Cover Art & Release Information",
+                "nextStepDescription": "Upload cover art and provide release details like name, genre, and label information",
+                "canProceedToNextStep": false,
+                "requiredFields": [
+                    "coverArt.imageUrl",
+                    "releaseInfo.releaseName",
+                    "releaseInfo.genre"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false,
+                    "trackCount": 0
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Release created successfully! Start by uploading cover art and providing release information."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:24:42.668Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/releases/RE-B-S-001/step1"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "currentStep": "audio_files_and_tracks",
+            "step1Completed": true,
+            "completionPercentage": 33,
+            "nextStep": {
+                "nextStep": "step2",
+                "nextStepTitle": "Audio Files & Track Information",
+                "nextStepDescription": "Upload audio files and provide track details like composer, lyricist, and singer information",
+                "canProceedToNextStep": true,
+                "requiredFields": [
+                    "tracks[].trackName",
+                    "tracks[].genre",
+                    "tracks[].audioFiles[]"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:24:42.525Z",
+                    "hasData": true
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false,
+                    "trackCount": 0
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Step 1 completed! Ready to proceed to step 2."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:24:49.608Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/releases/RE-B-S-001/step2"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "currentStep": "release_settings",
+            "step2Completed": true,
+            "tracksCount": 1,
+            "completionPercentage": 67,
+            "nextStep": {
+                "nextStep": "step3",
+                "nextStepTitle": "Release Settings",
+                "nextStepDescription": "Set release date, select territories, distribution partners, and provide copyright information",
+                "canProceedToNextStep": true,
+                "requiredFields": [
+                    "releaseDate",
+                    "territorialRights",
+                    "partnerSelection",
+                    "copyrights"
+                ]
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:24:42.525Z",
+                    "hasData": true
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:24:49.404Z",
+                    "hasData": true,
+                    "trackCount": 1
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": false,
+                    "completedAt": null,
+                    "hasData": false
+                }
+            },
+            "message": "Step 2 completed! Ready to proceed to step 3."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:24:58.628Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "PATCH",
+            "url": "/v1/releases/RE-B-S-001/step3"
+        },
+        "message": "The resource has been updated successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "currentStep": "release_settings",
+            "step3Completed": true,
+            "readyForSubmission": true,
+            "completionPercentage": 100,
+            "nextStep": {
+                "nextStep": "submit",
+                "nextStepTitle": "Submit for Review",
+                "nextStepDescription": "All steps completed! Submit your release for admin review and processing",
+                "canProceedToNextStep": true,
+                "requiredFields": []
+            },
+            "stepSummary": {
+                "step1": {
+                    "title": "Cover Art & Release Info",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:24:42.525Z",
+                    "hasData": true
+                },
+                "step2": {
+                    "title": "Audio Files & Tracks",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:24:49.404Z",
+                    "hasData": true,
+                    "trackCount": 1
+                },
+                "step3": {
+                    "title": "Release Settings",
+                    "isCompleted": true,
+                    "completedAt": "2025-09-15T16:24:58.301Z",
+                    "hasData": true
+                }
+            },
+            "message": "Step 3 completed! All steps done. Ready to submit for review."
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:25:09.880Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/RE-B-S-001/submit"
+        },
+        "message": "Release submitted for review successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "submitted",
+            "submittedAt": "2025-09-15T16:25:09.685Z"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:25:21.249Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/approve"
+        },
+        "message": "Release approved for review successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "under_review",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:25:21.116Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:25:26.882Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/start-processing"
+        },
+        "message": "Release processing started successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "processing",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:25:26.573Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:25:32.063Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/publish"
+        },
+        "message": "Release published successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "published",
+            "publishedAt": "2025-09-15T16:25:31.972Z",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:25:31.972Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:25:37.883Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/go-live"
+        },
+        "message": "Release is now live successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "live",
+            "liveAt": "2025-09-15T16:25:37.850Z",
+            "adminReview": {
+                "reviewedBy": "68bef3763b5dd834f409946a",
+                "reviewedAt": "2025-09-15T16:25:37.850Z",
+                "adminNotes": "Release looks good, approved for review process"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:25:51.560Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/releases/RE-B-S-001/request-takedown"
+        },
+        "message": "Take down request submitted successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "take_down",
+            "takeDown": {
+                "requestedAt": "2025-09-15T16:25:51.496Z",
+                "processedAt": null,
+                "processedBy": null,
+                "reason": "Copyright issues resolved, want to remove from all platforms"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:26:01.692Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/releases/RE-B-S-001/process-takedown"
+        },
+        "message": "Take down request processed successfully",
+        "data": {
+            "releaseId": "RE-B-S-001",
+            "releaseStatus": "take_down",
+            "takeDown": {
+                "requestedAt": "2025-09-15T16:25:51.496Z",
+                "processedAt": "2025-09-15T16:26:01.491Z",
+                "processedBy": "68bef3763b5dd834f409946a",
+                "reason": "Copyright issues resolved, want to remove from all platforms"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:28:37.794Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc5NTM3MTcsImV4cCI6MTc1ODA0MDExN30.cGcNGi8OzmjeQBmVJe8lPO36ACZWlCkwCpOgRkk-eew",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc5NTM3MTcsImV4cCI6MTc1ODU1ODUxN30.UmxOwLP2MH6uiRpKwS-5N-Qaje7_1BxxigQh2RDfMeI"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:36:22.907Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/aggregator/applications?status=pending&page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "applications": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalApplications": 0,
+                "hasNextPage": false,
+                "hasPrevPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:36:29.897Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/aggregator/applications/"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "applications": [
+                {
+                    "_id": "68beacdb34cf3f5b4f10cbab",
+                    "firstName": "John",
+                    "lastName": "Aggregator",
+                    "emailAddress": "john.aggregator@example.com",
+                    "phoneNumber": "+91-9876543210",
+                    "companyName": "Music Distribution Co",
+                    "websiteLink": "https://musicdistribution.com",
+                    "instagramUrl": "https://instagram.com/musicdist",
+                    "facebookUrl": "https://facebook.com/musicdist",
+                    "linkedinUrl": null,
+                    "youtubeLink": "https://youtube.com/musicdist",
+                    "popularReleaseLinks": [
+                        "https://spotify.com/track1",
+                        "https://spotify.com/track2"
+                    ],
+                    "popularArtistLinks": [
+                        "https://spotify.com/artist1"
+                    ],
+                    "associatedLabels": [
+                        "Label One",
+                        "Label Two"
+                    ],
+                    "totalReleases": 500,
+                    "releaseFrequency": "monthly",
+                    "monthlyReleasePlans": 50,
+                    "briefInfo": "We are a leading music distribution company with 5+ years of experience in the industry. We work with over 100 artists and labels.",
+                    "additionalServices": [
+                        "music_marketing",
+                        "youtube_cms"
+                    ],
+                    "howDidYouKnow": "social_media",
+                    "howDidYouKnowOther": null,
+                    "applicationStatus": "approved",
+                    "adminNotes": "Great portfolio and experience. Approved for aggregator account.",
+                    "reviewedAt": "2025-09-13T14:42:06.066Z",
+                    "reviewedBy": {
+                        "_id": "68bef3763b5dd834f409946a",
+                        "firstName": "Admin",
+                        "lastName": "User",
+                        "emailAddress": "admin@maheshwarivisuals.com"
+                    },
+                    "isAccountCreated": false,
+                    "createdAccountId": null,
+                    "createdAt": "2025-09-08T10:15:55.835Z",
+                    "updatedAt": "2025-09-13T14:42:06.068Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 1,
+                "totalApplications": 1,
+                "hasNextPage": false,
+                "hasPrevPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:38:58.587Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/months"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "month": "Jan-25",
+            "displayName": "January 2025",
+            "isActive": true,
+            "type": "analytics",
+            "_id": "68c84122fe80724e2f8a909e",
+            "createdAt": "2025-09-15T16:38:58.403Z",
+            "updatedAt": "2025-09-15T16:38:58.403Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:54:21.585Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68bef3763b5dd834f409946a",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-08T15:17:10.108Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc5NTUyNjEsImV4cCI6MTc1ODA0MTY2MX0.PpnbOLWEXGFmcuExwPdyLm9GsrZlqyx8OvhQexFQxyU",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGJlZjM3NjNiNWRkODM0ZjQwOTk0NmEiLCJpYXQiOjE3NTc5NTUyNjEsImV4cCI6MTc1ODU2MDA2MX0.PysYkA1hZpPY1wr1-tktAPhrr9hW-I2ksHwwEhOx3oQ"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:56:39.813Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/admin/create"
+        },
+        "message": "Admin user created successfully",
+        "data": {
+            "admin": {
+                "_id": "68c84547fe80724e2f8a90ac",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "createdAt": "2025-09-15T16:56:39.010Z"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-15T16:56:46.137Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c84547fe80724e2f8a90ac",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-15T16:56:39.007Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM4NDU0N2ZlODA3MjRlMmY4YTkwYWMiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc5NTU0MDYsImV4cCI6MTc1ODA0MTgwNn0.hbs7YvW7W-RJ5YmJ2PVAFGHTFx9I_tP5sHOXb98VDx8",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM4NDU0N2ZlODA3MjRlMmY4YTkwYWMiLCJpYXQiOjE3NTc5NTU0MDYsImV4cCI6MTc1ODU2MDIwNn0.nxkC2mgLRbxDynTULHR4Sn4OtB2fIP4SP5skDdd1GOE"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T14:02:42.008Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T14:02:42.010Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T14:02:42.432Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T14:02:42.433Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:03:19.837Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c84547fe80724e2f8a90ac",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-15T16:56:39.007Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM4NDU0N2ZlODA3MjRlMmY4YTkwYWMiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgwMzEzOTksImV4cCI6MTc1ODExNzc5OX0.sqKfZtSbknp6JcVnXGajn6U2-AIXAlTM28FUq4EM9IY",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM4NDU0N2ZlODA3MjRlMmY4YTkwYWMiLCJpYXQiOjE3NTgwMzEzOTksImV4cCI6MTc1ODYzNjE5OX0.pS3y5_SHDBTjwhLZvY3N-tSP82TFgmoXKbSJ8KSBDZs"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:06:27.542Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/releases/self"
+        },
+        "message": "Basic Release service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:08:44.975Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/admin/create"
+        },
+        "message": "Admin user created successfully",
+        "data": {
+            "admin": {
+                "_id": "68c96f6c3f80882d5ff429ee",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "createdAt": "2025-09-16T14:08:44.450Z"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:08:52.175Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c96f6c3f80882d5ff429ee",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-16T14:08:44.448Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM5NmY2YzNmODA4ODJkNWZmNDI5ZWUiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgwMzE3MzIsImV4cCI6MTc1ODExODEzMn0.ts1WOVNl1yASBseUxbvIqC4UQthDIW_mAo0QsGiPkA8",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM5NmY2YzNmODA4ODJkNWZmNDI5ZWUiLCJpYXQiOjE3NTgwMzE3MzIsImV4cCI6MTc1ODYzNjUzMn0.XbpPIzzQQURUdH3ITlKIBeDDENe-rViiwm2e9xjbciA"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:09:26.304Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/releases/self"
+        },
+        "message": "Basic Release service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:10:19.167Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/self"
+        },
+        "message": "Admin Releases service is running.",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:10:25.511Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "releases": [],
+            "pagination": {
+                "currentPage": 1,
+                "totalPages": 0,
+                "totalItems": 0,
+                "itemsPerPage": 10
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:10:30.434Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/releases/stats"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "statusCounts": {
+                "draft": 0,
+                "submitted": 0,
+                "underReview": 0,
+                "processing": 0,
+                "published": 0,
+                "live": 0,
+                "rejected": 0,
+                "takeDown": 0,
+                "updateRequest": 0
+            },
+            "trackTypeCounts": {
+                "single": 0,
+                "album": 0
+            },
+            "totalReleases": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:10:51.713Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c96f6c3f80882d5ff429ee",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-16T14:08:44.448Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM5NmY2YzNmODA4ODJkNWZmNDI5ZWUiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgwMzE4NTEsImV4cCI6MTc1ODExODI1MX0.0FKm3GIuXxR6DTKlLSW1NaarLdiBctITubxspDl4Y8E",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM5NmY2YzNmODA4ODJkNWZmNDI5ZWUiLCJpYXQiOjE3NTgwMzE4NTEsImV4cCI6MTc1ODYzNjY1MX0.Msm17ECqNfcyzsi_wB9wzcoZ_bQNK4XrHC7l16P2yPA"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T14:14:03.492Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/admin/months"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "month": "Dec-25",
+            "displayName": "December 2025",
+            "isActive": true,
+            "type": "analytics",
+            "_id": "68c970ab3f80882d5ff42a11",
+            "createdAt": "2025-09-16T14:14:03.453Z",
+            "updatedAt": "2025-09-16T14:14:03.453Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T14:27:51.976Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T14:27:51.980Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T14:27:52.282Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T14:27:52.283Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T14:27:59.581Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T14:27:59.584Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T14:27:59.836Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T14:27:59.837Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T15:07:14.281Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T15:07:14.284Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T15:07:14.548Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T15:07:14.548Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T15:07:20.287Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/months?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "months": [
+                {
+                    "_id": "68c970ab3f80882d5ff42a11",
+                    "month": "Dec-25",
+                    "displayName": "December 2025",
+                    "isActive": true,
+                    "type": "analytics",
+                    "createdAt": "2025-09-16T14:14:03.453Z",
+                    "updatedAt": "2025-09-16T14:14:03.453Z",
+                    "__v": 0
+                },
+                {
+                    "_id": "68c84122fe80724e2f8a909e",
+                    "month": "Jan-25",
+                    "displayName": "January 2025",
+                    "isActive": true,
+                    "type": "analytics",
+                    "createdAt": "2025-09-15T16:38:58.403Z",
+                    "updatedAt": "2025-09-15T16:38:58.403Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "totalCount": 2,
+                "currentPage": 1,
+                "limit": 10,
+                "totalPages": 1,
+                "hasNextPage": false,
+                "hasPrevPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T15:09:22.048Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T15:09:22.054Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T15:09:22.345Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T15:09:22.346Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T15:16:48.968Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T15:16:48.972Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T15:16:49.245Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T15:16:49.246Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2025-09-16T15:16:57.847Z",
+    "meta": {
+        "CONNECTION_NAME": "maheshwar"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2025-09-16T15:16:57.852Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "DEFAULT_SUBLABELS_INITIALIZED",
+    "timestamp": "2025-09-16T15:16:58.135Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2025-09-16T15:16:58.136Z",
+    "meta": {
+        "PORT": 5000,
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T15:17:06.949Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/admin/months?page=1&limit=10"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "months": [
+                {
+                    "_id": "68c970ab3f80882d5ff42a11",
+                    "month": "Dec-25",
+                    "displayName": "December 2025",
+                    "isActive": true,
+                    "type": "analytics",
+                    "createdAt": "2025-09-16T14:14:03.453Z",
+                    "updatedAt": "2025-09-16T14:14:03.453Z",
+                    "__v": 0
+                },
+                {
+                    "_id": "68c84122fe80724e2f8a909e",
+                    "month": "Jan-25",
+                    "displayName": "January 2025",
+                    "isActive": true,
+                    "type": "analytics",
+                    "createdAt": "2025-09-15T16:38:58.403Z",
+                    "updatedAt": "2025-09-15T16:38:58.403Z",
+                    "__v": 0
+                }
+            ],
+            "pagination": {
+                "totalCount": 2,
+                "currentPage": 1,
+                "limit": 10,
+                "totalPages": 1,
+                "hasNextPage": false,
+                "hasPrevPage": false
+            }
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2025-09-16T16:17:29.566Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/v1/auth/login"
+        },
+        "message": "Login successful",
+        "data": {
+            "user": {
+                "_id": "68c96f6c3f80882d5ff429ee",
+                "accountId": "MV/AD/01",
+                "firstName": "Admin",
+                "lastName": "User",
+                "emailAddress": "admin@maheshwarivisuals.com",
+                "role": "admin",
+                "isEmailVerified": true,
+                "profileCompletion": {
+                    "isComplete": false,
+                    "percentage": 0,
+                    "missingFields": [],
+                    "lastUpdated": "2025-09-16T14:08:44.448Z"
+                },
+                "hasActiveSubscription": false,
+                "subscription": {
+                    "planId": null,
+                    "status": "inactive",
+                    "validFrom": null,
+                    "validUntil": null,
+                    "autoRenewal": true,
+                    "razorpaySubscriptionId": null,
+                    "lastPaymentDate": null,
+                    "nextPaymentDate": null
+                },
+                "kycStatus": {
+                    "documents": {
+                        "aadharCard": null,
+                        "panCard": null
+                    },
+                    "isCompleted": false,
+                    "status": "pending",
+                    "submittedAt": null,
+                    "verifiedAt": null,
+                    "rejectedAt": null,
+                    "rejectionReason": null
+                }
+            },
+            "tokens": {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM5NmY2YzNmODA4ODJkNWZmNDI5ZWUiLCJlbWFpbEFkZHJlc3MiOiJhZG1pbkBtYWhlc2h3YXJpdmlzdWFscy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgwMzk0NDksImV4cCI6MTc1ODEyNTg0OX0.q1Ciz0VkQKOqgHdFT4pUZFhOL12T5mLWUPHUe86etZ8",
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM5NmY2YzNmODA4ODJkNWZmNDI5ZWUiLCJpYXQiOjE3NTgwMzk0NDksImV4cCI6MTc1ODY0NDI0OX0.yPRsgIR9F47TBVLU4cuMnf400MPm3nRVkohEOIrzBug"
+            },
+            "accountStatus": {
+                "emailVerified": true,
+                "kycCompleted": false,
+                "kycStatus": "pending",
+                "hasActiveSubscription": false,
+                "subscriptionStatus": "inactive",
+                "nextStep": "complete_kyc",
+                "redirectTo": "/kyc"
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import httpResponse from '../../util/httpResponse.js'
 import httpError from '../../util/httpError.js'
 import quicker from '../../util/quicker.js'
 
+
 export default {
     async createMonth(req, res, next) {
         try {

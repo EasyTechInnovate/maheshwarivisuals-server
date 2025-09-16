@@ -182,4 +182,18 @@ export default {
             }
         }
     },
+      getPagination: ({ totalCount, limit, currentPage }) => {
+    const l = Math.max(parseInt(limit, 10) || 10, 1);
+    const p = Math.max(parseInt(currentPage, 10) || 1, 1);
+    const totalPages = Math.max(Math.ceil((parseInt(totalCount, 10) || 0) / l), 1);
+
+    return {
+      totalCount: parseInt(totalCount, 10) || 0,
+      currentPage: p,
+      limit: l,
+      totalPages,
+      hasNextPage: p < totalPages,
+      hasPrevPage: p > 1,
+    };
+  },
 };
