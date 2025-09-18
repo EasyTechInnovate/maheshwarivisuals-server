@@ -130,3 +130,11 @@ export const monthParamsSchema = z.object({
             .regex(/^[0-9a-fA-F]{24}$/, 'Invalid month ID format')
     })
 })
+
+export default {
+    createMonthSchema,
+    updateMonthSchema,
+    getMonthsByTypeSchema,
+    getAllMonthsSchema,
+    monthParamsSchema
+}

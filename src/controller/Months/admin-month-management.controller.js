@@ -3,7 +3,6 @@ import { EMonthManagementType } from '../../constant/application.js'
 import responseMessage from '../../constant/responseMessage.js'
 import httpResponse from '../../util/httpResponse.js'
 import httpError from '../../util/httpError.js'
-import quicker from '../../util/quicker.js'
 
 
 export default {
@@ -86,11 +85,13 @@ export default {
                 MonthManagement.countDocuments(filter)
             ])
 
-            const pagination = quicker.getPagination({
+            const pagination = {
                 totalCount,
-                limit: limitNumber,
-                currentPage: pageNumber
-            })
+                totalPages: Math.ceil(totalCount / limitNumber),
+                currentPage: pageNumber,
+                hasNext: pageNumber < Math.ceil(totalCount / limitNumber),
+                hasPrev: pageNumber > 1
+            }
 
             httpResponse(
                 req,

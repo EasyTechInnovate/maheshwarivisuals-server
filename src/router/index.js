@@ -8,6 +8,7 @@ import aggregatorRouter from './aggregator.route.js';
 import releaseRouter from './release.route.js';
 import advanceReleaseRouter from './advance-release.route.js';
 import monthManagementRouter from './month-management.route.js';
+import reportRouter from './report.route.js';
 
 const router = Router();
 
@@ -20,6 +21,7 @@ router.use('/aggregator', aggregatorRouter);
 router.use('/releases', releaseRouter);
 router.use('/advance-releases', advanceReleaseRouter);
 router.use('/months', monthManagementRouter);
+router.use('/reports', reportRouter);
 
 
 export default router;

@@ -202,6 +202,33 @@ const apiData = [
       { method: "GET", path: "/type/:type/active", description: "Get active months by type" },
       { method: "GET", path: "/:id", description: "Get month details by ID (active only)" }
     ]
+  },
+  {
+    name: "Admin - Report Management",
+    url: "/v1/admin/reports",
+    description: "Manage CSV report uploads and data processing for analytics, royalty, bonus, and MCN",
+    endpoints: [
+      { method: "POST", path: "/upload", description: "Upload CSV report file for processing" },
+      { method: "GET", path: "/", description: "Get all reports with pagination & filters" },
+      { method: "GET", path: "/stats", description: "Get report statistics and summary" },
+      { method: "GET", path: "/month/:monthId", description: "Get all reports for specific month" },
+      { method: "GET", path: "/:id", description: "Get report details by ID" },
+      { method: "GET", path: "/:id/data", description: "Get processed CSV data from report" },
+      { method: "DELETE", path: "/:id", description: "Delete report and associated file" }
+    ]
+  },
+  {
+    name: "Reports",
+    url: "/v1/reports",
+    description: "User access to view processed report data",
+    endpoints: [
+      { method: "GET", path: "/available", description: "Get available completed reports" },
+      { method: "GET", path: "/type/:reportType", description: "Get reports by type (analytics/royalty/bonus_royalty/mcn)" },
+      { method: "GET", path: "/month/:monthId", description: "Get all reports for specific month" },
+      { method: "GET", path: "/:id/summary", description: "Get report summary and statistics" },
+      { method: "GET", path: "/:id/data", description: "Get paginated report data with search/sort" },
+      { method: "GET", path: "/:id/search", description: "Search within report data" }
+    ]
   }
 ];
 

@@ -4,6 +4,7 @@ import adminReleasesController from '../controller/Admin/admin-releases.controll
 import adminAdvanceReleaseController from '../controller/Admin/admin-advance-release.controller.js'
 import adminSublabelsController from '../controller/Admin/admin-sublabels.controller.js'
 import adminMonthManagementController from '../controller/Months/admin-month-management.controller.js'
+import adminReportController from '../controller/Reports/admin-report.controller.js'
 import validateRequest from '../middleware/validateRequest.js'
 import authentication from '../middleware/authentication.js'
 import authorization from '../middleware/authorization.js'
@@ -13,7 +14,9 @@ import releaseSchemas from '../schema/release.schema.js'
 import advancedReleaseSchemas from '../schema/advanced-release.schema.js'
 import sublabelSchemas from '../schema/sublabel.schema.js'
 import { EUserRole } from '../constant/application.js'
-import { createMonthSchema, getAllMonthsSchema, getMonthsByTypeSchema, monthParamsSchema, updateMonthSchema } from '../schema/month-management.schema.js'
+import monthManagementSchemas from '../schema/month-management.schema.js'
+import reportSchemas from '../schema/report.schema.js'
+import { uploadFiles } from '../middleware/multerHandler.js'
 
 const router = Router()
 
@@ -369,13 +372,13 @@ router.route('/months')
     .post(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(createMonthSchema),
+        validateRequest(monthManagementSchemas.createMonthSchema),
         adminMonthManagementController.createMonth
     )
     .get(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(getAllMonthsSchema),
+        validateRequest(monthManagementSchemas.getAllMonthsSchema),
         adminMonthManagementController.getAllMonths
     )
 
@@ -390,7 +393,7 @@ router.route('/months/type/:type')
     .get(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(getMonthsByTypeSchema),
+        validateRequest(monthManagementSchemas.getMonthsByTypeSchema),
         adminMonthManagementController.getMonthsByType
     )
 
@@ -398,19 +401,19 @@ router.route('/months/:id')
     .get(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(monthParamsSchema),
+        validateRequest(monthManagementSchemas.monthParamsSchema),
         adminMonthManagementController.getMonthById
     )
     .patch(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(updateMonthSchema),
+        validateRequest(monthManagementSchemas.updateMonthSchema),
         adminMonthManagementController.updateMonth
     )
     .delete(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(monthParamsSchema),
+        validateRequest(monthManagementSchemas.monthParamsSchema),
         adminMonthManagementController.deleteMonth
     )
 
@@ -418,8 +421,63 @@ router.route('/months/:id/toggle-status')
     .patch(
         authentication,
         authorization([EUserRole.ADMIN]),
-        validateRequest(monthParamsSchema),
+        validateRequest(monthManagementSchemas.monthParamsSchema),
         adminMonthManagementController.toggleMonthStatus
+    )
+
+// Report Management Routes
+router.route('/reports/upload')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        uploadFiles,
+        validateRequest(reportSchemas.uploadReportSchema),
+        adminReportController.uploadReport
+    )
+
+router.route('/reports')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(reportSchemas.getReportsSchema),
+        adminReportController.getReports
+    )
+
+router.route('/reports/stats')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminReportController.getReportStats
+    )
+
+router.route('/reports/month/:monthId')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(reportSchemas.getReportsByMonthSchema),
+        adminReportController.getReportsByMonth
+    )
+
+router.route('/reports/:id')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(reportSchemas.reportParamsSchema),
+        adminReportController.getReportById
+    )
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(reportSchemas.reportParamsSchema),
+        adminReportController.deleteReport
+    )
+
+router.route('/reports/:id/data')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(reportSchemas.getReportDataSchema),
+        adminReportController.getReportData
     )
 
 export default router

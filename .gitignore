@@ -21,3 +21,7 @@ build
 .env.test.local
 docs
 development.log
+Test Analytics Sheet.csv
+Test Bonus Royalty.csv
+Test MCN Sheet.csv
+Test Royalty.csv

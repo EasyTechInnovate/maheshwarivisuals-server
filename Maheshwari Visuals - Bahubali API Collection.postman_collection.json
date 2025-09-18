@@ -2055,7 +2055,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"body": {
@@ -2082,7 +2082,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"url": {
@@ -2130,7 +2130,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"url": {
@@ -2158,7 +2158,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"body": {
@@ -2186,7 +2186,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"url": {
@@ -2214,7 +2214,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"body": {
@@ -2247,7 +2247,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"body": {
@@ -2276,7 +2276,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"url": {
@@ -2305,7 +2305,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{auth_token}}"
+								"value": "Bearer {{adminToken}}"
 							}
 						],
 						"body": {
@@ -2706,6 +2706,518 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Admin - Report Management",
+			"item": [
+				{
+					"name": "Upload Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "monthId",
+									"value": "{{month_id}}",
+									"type": "text"
+								},
+								{
+									"key": "reportType",
+									"value": "analytics",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports/upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports",
+								"upload"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get All Reports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "reportType",
+									"value": "analytics",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "completed",
+									"disabled": true
+								},
+								{
+									"key": "monthId",
+									"value": "{{month_id}}",
+									"disabled": true
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Report Stats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports",
+								"stats"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Reports by Month",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports/month/{{month_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports",
+								"month",
+								"{{month_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Report by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports/{{report_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports",
+								"{{report_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Report Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports/{{report_id}}/data?page=1&limit=100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports",
+								"{{report_id}}",
+								"data"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "search",
+									"value": "spotify",
+									"disabled": true
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/reports/{{report_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"reports",
+								"{{report_id}}"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get Available Reports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/reports/available?limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"available"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "reportType",
+									"value": "analytics",
+									"disabled": true
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Reports by Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/reports/type/analytics?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"type",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Reports by Month",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/reports/month/{{month_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"month",
+								"{{month_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Report Summary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/reports/{{report_id}}/summary",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"{{report_id}}",
+								"summary"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Report Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/reports/{{report_id}}/data?page=1&limit=100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"{{report_id}}",
+								"data"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "search",
+									"value": "artist",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "totalUnits",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Search Report Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/reports/{{report_id}}/search?search=spotify&page=1&limit=50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"{{report_id}}",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "spotify"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "50"
+								},
+								{
+									"key": "field",
+									"value": "musicService",
+									"disabled": true
+								}
+							]
+						}
+					}
+				}
+			]
 		}
 	],
 	"event": [
@@ -2777,6 +3289,11 @@
 		},
 		{
 			"key": "month_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "report_id",
 			"value": "",
 			"type": "string"
 		}

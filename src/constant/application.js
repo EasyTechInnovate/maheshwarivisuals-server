@@ -196,3 +196,17 @@ export const EMonthManagementType = Object.freeze({
     ROYALTY: 'royalty',
     BONUS: 'bonus'
 });
+
+export const EReportType = Object.freeze({
+    ANALYTICS: 'analytics',
+    ROYALTY: 'royalty',
+    BONUS_ROYALTY: 'bonus_royalty',
+    MCN: 'mcn'
+});
+
+export const EReportStatus = Object.freeze({
+    PENDING: 'pending',
+    PROCESSING: 'processing',
+    COMPLETED: 'completed',
+    FAILED: 'failed'
+});
