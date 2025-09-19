@@ -380,6 +380,14 @@ const userSchema = new mongoose.Schema(
         type: String,
         default: null,
       },
+      linkedin: {
+        type: String,
+        default: null,
+      },
+      website: {
+        type: String,
+        default: null,
+      },
       facebook: {
         type: String,
         default: null,

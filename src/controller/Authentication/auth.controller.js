@@ -1,5 +1,6 @@
 import crypto from 'crypto'
 import User from '../../model/user.model.js'
+import CompanySettings from '../../model/company-settings.model.js'
 import { EUserRole, EKYCStatus, EUserType } from '../../constant/application.js'
 import responseMessage from '../../constant/responseMessage.js'
 import httpResponse from '../../util/httpResponse.js'
@@ -196,28 +197,61 @@ export default {
             user.lastLoginAt = new Date()
             await user.save()
 
-            const accountStatus = quicker.getAccountStatus(user)
+            let responseData
 
-            const responseData = {
-                user: {
-                    _id: user._id,
-                    accountId: user.accountId,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    emailAddress: user.emailAddress,
-                    role: user.role,
-                    userType: user.userType,
-                    isEmailVerified: user.isEmailVerified,
-                    profileCompletion: user.profileCompletion,
-                    hasActiveSubscription: user.hasActiveSubscription,
-                    subscription: user.subscription,
-                    kycStatus: user.kycStatus
-                },
-                tokens: {
-                    accessToken,
-                    refreshToken
-                },
-                accountStatus: accountStatus
+            if (user.role === EUserRole.ADMIN) {
+                // Admin login response with company setup status
+                const companySettings = await CompanySettings.findOne({ status: 'active' })
+                const isCompanySetupComplete = companySettings ? companySettings.isSetupComplete : false
+
+                responseData = {
+                    user: {
+                        _id: user._id,
+                        accountId: user.accountId,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        emailAddress: user.emailAddress,
+                        role: user.role,
+                        isEmailVerified: user.isEmailVerified
+                    },
+                    tokens: {
+                        accessToken,
+                        refreshToken
+                    },
+                    companySetup: {
+                        isComplete: isCompanySetupComplete,
+                        message: isCompanySetupComplete
+                            ? 'Company setup is complete'
+                            : 'Please complete company settings including social media links and contact information',
+                        nextStep: isCompanySetupComplete ? null : 'complete_company_settings',
+                        redirectTo: isCompanySetupComplete ? '/admin/dashboard' : '/admin/company-settings'
+                    }
+                }
+            } else {
+                // Regular user login response with KYC status
+                const accountStatus = quicker.getAccountStatus(user)
+
+                responseData = {
+                    user: {
+                        _id: user._id,
+                        accountId: user.accountId,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        emailAddress: user.emailAddress,
+                        role: user.role,
+                        userType: user.userType,
+                        isEmailVerified: user.isEmailVerified,
+                        profileCompletion: user.profileCompletion,
+                        hasActiveSubscription: user.hasActiveSubscription,
+                        subscription: user.subscription,
+                        kycStatus: user.kycStatus
+                    },
+                    tokens: {
+                        accessToken,
+                        refreshToken
+                    },
+                    accountStatus: accountStatus
+                }
             }
 
             return httpResponse(
@@ -639,6 +673,10 @@ export default {
             
             await adminUser.save()
 
+            // Check company settings completion status
+            const companySettings = await CompanySettings.findOne({ status: 'active' })
+            const isCompanySetupComplete = companySettings ? companySettings.isSetupComplete : false
+
             const responseData = {
                 admin: {
                     _id: adminUser._id,
@@ -648,6 +686,12 @@ export default {
                     emailAddress: adminUser.emailAddress,
                     role: adminUser.role,
                     createdAt: adminUser.createdAt
+                },
+                companySetup: {
+                    isComplete: isCompanySetupComplete,
+                    message: isCompanySetupComplete
+                        ? 'Company setup is complete'
+                        : 'Please complete company settings including social media links and contact information'
                 }
             }
 

@@ -5,6 +5,11 @@ import adminAdvanceReleaseController from '../controller/Admin/admin-advance-rel
 import adminSublabelsController from '../controller/Admin/admin-sublabels.controller.js'
 import adminMonthManagementController from '../controller/Months/admin-month-management.controller.js'
 import adminReportController from '../controller/Reports/admin-report.controller.js'
+import adminFAQController from '../controller/FAQ/admin-faq.controller.js'
+import adminTestimonialController from '../controller/Testimonial/admin-testimonial.controller.js'
+import adminTrendingLabelController from '../controller/TrendingLabel/admin-trending-label.controller.js'
+import adminAnalyticsController from '../controller/Admin/admin-analytics.controller.js'
+import adminCompanySettingsController from '../controller/CompanySettings/admin-company-settings.controller.js'
 import validateRequest from '../middleware/validateRequest.js'
 import authentication from '../middleware/authentication.js'
 import authorization from '../middleware/authorization.js'
@@ -16,6 +21,10 @@ import sublabelSchemas from '../schema/sublabel.schema.js'
 import { EUserRole } from '../constant/application.js'
 import monthManagementSchemas from '../schema/month-management.schema.js'
 import reportSchemas from '../schema/report.schema.js'
+import faqSchemas from '../schema/faq.schema.js'
+import testimonialSchemas from '../schema/testimonial.schema.js'
+import trendingLabelSchemas from '../schema/trending-label.schema.js'
+import companySettingsSchemas from '../schema/company-settings.schema.js'
 import { uploadFiles } from '../middleware/multerHandler.js'
 
 const router = Router()
@@ -478,6 +487,226 @@ router.route('/reports/:id/data')
         authorization([EUserRole.ADMIN]),
         validateRequest(reportSchemas.getReportDataSchema),
         adminReportController.getReportData
+    )
+
+// FAQ Management Routes
+router.route('/faqs')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(faqSchemas.createFAQSchema),
+        adminFAQController.createFAQ
+    )
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(faqSchemas.getFAQsSchema, 'query'),
+        adminFAQController.getAllFAQs
+    )
+
+router.route('/faqs/self')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminFAQController.self
+    )
+
+router.route('/faqs/:faqId')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(faqSchemas.getFAQByIdSchema),
+        adminFAQController.getFAQById
+    )
+    .put(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(faqSchemas.updateFAQSchema),
+        adminFAQController.updateFAQ
+    )
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(faqSchemas.deleteFAQSchema),
+        adminFAQController.deleteFAQ
+    )
+
+// Testimonial Management Routes
+router.route('/testimonials')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(testimonialSchemas.createTestimonialSchema),
+        adminTestimonialController.createTestimonial
+    )
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(testimonialSchemas.getTestimonialsSchema, 'query'),
+        adminTestimonialController.getAllTestimonials
+    )
+
+router.route('/testimonials/self')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminTestimonialController.self
+    )
+
+router.route('/testimonials/stats')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminTestimonialController.getTestimonialStats
+    )
+
+router.route('/testimonials/:testimonialId')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(testimonialSchemas.getTestimonialByIdSchema),
+        adminTestimonialController.getTestimonialById
+    )
+    .put(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(testimonialSchemas.updateTestimonialSchema),
+        adminTestimonialController.updateTestimonial
+    )
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(testimonialSchemas.deleteTestimonialSchema),
+        adminTestimonialController.deleteTestimonial
+    )
+
+// Trending Label Management Routes
+router.route('/trending-labels')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(trendingLabelSchemas.createTrendingLabelSchema),
+        adminTrendingLabelController.createTrendingLabel
+    )
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(trendingLabelSchemas.getTrendingLabelsSchema, 'query'),
+        adminTrendingLabelController.getAllTrendingLabels
+    )
+
+router.route('/trending-labels/self')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminTrendingLabelController.self
+    )
+
+router.route('/trending-labels/stats')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminTrendingLabelController.getTrendingLabelStats
+    )
+
+router.route('/trending-labels/:labelId')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(trendingLabelSchemas.getTrendingLabelByIdSchema),
+        adminTrendingLabelController.getTrendingLabelById
+    )
+    .put(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(trendingLabelSchemas.updateTrendingLabelSchema),
+        adminTrendingLabelController.updateTrendingLabel
+    )
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(trendingLabelSchemas.deleteTrendingLabelSchema),
+        adminTrendingLabelController.deleteTrendingLabel
+    )
+
+// User Management Routes
+router.route('/users')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminAnalyticsController.getAllUsers
+    )
+
+router.route('/analytics/self')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminAnalyticsController.self
+    )
+
+// Company Settings Management Routes
+router.route('/company-settings')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.createCompanySettingsSchema),
+        adminCompanySettingsController.createCompanySettings
+    )
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.getCompanySettingsSchema, 'query'),
+        adminCompanySettingsController.getCompanySettings
+    )
+
+router.route('/company-settings/self')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminCompanySettingsController.self
+    )
+
+router.route('/company-settings/setup-status')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        adminCompanySettingsController.getSetupStatus
+    )
+
+router.route('/company-settings/:settingsId')
+    .get(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.getCompanySettingsByIdSchema),
+        adminCompanySettingsController.getCompanySettingsById
+    )
+    .put(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.updateCompanySettingsSchema),
+        adminCompanySettingsController.updateCompanySettings
+    )
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.deleteCompanySettingsSchema),
+        adminCompanySettingsController.deleteCompanySettings
+    )
+
+router.route('/company-settings/:settingsId/youtube-links')
+    .post(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.addYoutubeLinkSchema),
+        adminCompanySettingsController.addYoutubeLink
+    )
+
+router.route('/company-settings/:settingsId/youtube-links/:linkIndex')
+    .delete(
+        authentication,
+        authorization([EUserRole.ADMIN]),
+        validateRequest(companySettingsSchemas.removeYoutubeLinkSchema),
+        adminCompanySettingsController.removeYoutubeLink
     )
 
 export default router

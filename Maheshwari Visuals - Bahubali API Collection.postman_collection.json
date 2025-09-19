@@ -3218,6 +3218,2889 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Public - FAQ",
+			"item": [
+				{
+					"name": "Get FAQ Service Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/faqs/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"faqs",
+								"self"
+							]
+						},
+						"description": "Get FAQ service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All FAQs by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/faqs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"faqs"
+							]
+						},
+						"description": "Get all active FAQs grouped by category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get FAQs by Specific Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/faqs?category=Upload Process",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"faqs"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Upload Process",
+									"description": "Filter by category: Upload Process, Distribution, Royalties, Release Management, Technical Support"
+								}
+							]
+						},
+						"description": "Get FAQs for a specific category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All FAQ Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/faqs/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"faqs",
+								"categories"
+							]
+						},
+						"description": "Get all available FAQ categories"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - FAQ Management",
+			"item": [
+				{
+					"name": "Get Admin FAQ Service Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/faqs/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"faqs",
+								"self"
+							]
+						},
+						"description": "Get admin FAQ service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Create FAQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": \"How do I upload my music?\",\n    \"answer\": \"You can upload your music by following these steps: 1. Login to your account 2. Navigate to the Upload section 3. Fill in the required information 4. Upload your audio files 5. Submit for review\",\n    \"category\": \"Upload Process\",\n    \"status\": true,\n    \"displayOrder\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/faqs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"faqs"
+							]
+						},
+						"description": "Create a new FAQ"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All FAQs (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/faqs?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"faqs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "category",
+									"value": "Upload Process",
+									"disabled": true,
+									"description": "Filter by category"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"disabled": true,
+									"description": "Filter by status"
+								}
+							]
+						},
+						"description": "Get all FAQs with admin pagination and filtering"
+					},
+					"response": []
+				},
+				{
+					"name": "Get FAQ by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/faqs/{{faq_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"faqs",
+								"{{faq_id}}"
+							]
+						},
+						"description": "Get specific FAQ by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update FAQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": \"How do I upload my music? (Updated)\",\n    \"answer\": \"You can upload your music by following these updated steps: 1. Login to your account 2. Navigate to the Upload section 3. Fill in the required information 4. Upload your audio files 5. Submit for review\",\n    \"category\": \"Upload Process\",\n    \"status\": true,\n    \"displayOrder\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/faqs/{{faq_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"faqs",
+								"{{faq_id}}"
+							]
+						},
+						"description": "Update an existing FAQ"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete FAQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/faqs/{{faq_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"faqs",
+								"{{faq_id}}"
+							]
+						},
+						"description": "Delete an FAQ"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public - Company Settings",
+			"item": [
+				{
+					"name": "Get Company Settings Service Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"self"
+							]
+						},
+						"description": "Get company settings service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Complete Company Settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings"
+							]
+						},
+						"description": "Get complete company settings including social media and contact information"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Social Media Links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/social-media",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"social-media"
+							]
+						},
+						"description": "Get social media links only"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contact Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"contact"
+							]
+						},
+						"description": "Get contact information only"
+					},
+					"response": []
+				},
+				{
+					"name": "Get YouTube Dashboard Links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/youtube-links",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"youtube-links"
+							]
+						},
+						"description": "Get YouTube dashboard links array"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Company Settings Management",
+			"item": [
+				{
+					"name": "Get Admin Company Settings Service Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"self"
+							]
+						},
+						"description": "Get admin company settings service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"socialMedia\": {\n        \"instagram\": \"https://instagram.com/maheshwarivisuals\",\n        \"facebook\": \"https://facebook.com/maheshwarivisuals\",\n        \"linkedin\": \"https://linkedin.com/company/maheshwarivisuals\",\n        \"youtube\": \"https://youtube.com/maheshwarivisuals\",\n        \"website\": \"https://maheshwarivisuals.com\",\n        \"x\": \"https://x.com/maheshwarivisuals\",\n        \"youtubeLinks\": [\n            {\n                \"title\": \"Latest Music Videos\",\n                \"url\": \"https://youtube.com/playlist1\"\n            },\n            {\n                \"title\": \"Artist Interviews\",\n                \"url\": \"https://youtube.com/playlist2\"\n            }\n        ]\n    },\n    \"contactInfo\": {\n        \"primaryPhone\": \"+91-9876543210\",\n        \"secondaryPhone\": \"+91-9876543211\",\n        \"primaryEmail\": \"info@maheshwarivisuals.com\",\n        \"supportEmail\": \"support@maheshwarivisuals.com\",\n        \"businessEmail\": \"business@maheshwarivisuals.com\",\n        \"whatsappQRCode\": \"https://example.com/whatsapp-qr.png\",\n        \"physicalAddress\": {\n            \"street\": \"123 Music Street\",\n            \"city\": \"Mumbai\",\n            \"state\": \"Maharashtra\",\n            \"zipCode\": \"400001\",\n            \"country\": \"India\"\n        },\n        \"businessHours\": \"Monday to Friday: 9:00 AM - 6:00 PM IST\"\n    },\n    \"status\": \"active\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings"
+							]
+						},
+						"description": "Create initial company settings"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Settings (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings?includeInactive=false",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings"
+							],
+							"query": [
+								{
+									"key": "includeInactive",
+									"value": "false",
+									"description": "Include inactive settings"
+								}
+							]
+						},
+						"description": "Get company settings for admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Setup Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/setup-status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"setup-status"
+							]
+						},
+						"description": "Check if company setup is complete"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Settings by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}"
+							]
+						},
+						"description": "Get company settings by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"socialMedia\": {\n        \"instagram\": \"https://instagram.com/maheshwarivisuals_updated\",\n        \"facebook\": \"https://facebook.com/maheshwarivisuals_updated\"\n    },\n    \"contactInfo\": {\n        \"primaryPhone\": \"+91-9876543200\",\n        \"businessHours\": \"Monday to Saturday: 9:00 AM - 7:00 PM IST\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}"
+							]
+						},
+						"description": "Update existing company settings"
+					},
+					"response": []
+				},
+				{
+					"name": "Add YouTube Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New Music Releases\",\n    \"url\": \"https://youtube.com/playlist3\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}/youtube-links",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}",
+								"youtube-links"
+							]
+						},
+						"description": "Add YouTube link to dashboard"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove YouTube Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}/youtube-links/0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}",
+								"youtube-links",
+								"0"
+							]
+						},
+						"description": "Remove YouTube link from dashboard by index"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}"
+							]
+						},
+						"description": "Delete company settings"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public - Testimonials",
+			"item": [
+				{
+					"name": "Get Testimonial Service Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials",
+								"self"
+							]
+						},
+						"description": "Get testimonial service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Published Testimonials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials?limit=10&rating=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of testimonials to return"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"description": "Filter by rating (1-5)",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get published testimonials with optional rating filter"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Testimonials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials/featured",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials",
+								"featured"
+							]
+						},
+						"description": "Get featured testimonials (4+ rating)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonials by Rating",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials/by-rating",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials",
+								"by-rating"
+							]
+						},
+						"description": "Get testimonials grouped by rating"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Testimonial Management",
+			"item": [
+				{
+					"name": "Get Admin Testimonial Service Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"self"
+							]
+						},
+						"description": "Get admin testimonial service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerName\": \"John Smith\",\n    \"designation\": \"Music Producer\",\n    \"company\": \"Smith Music Productions\",\n    \"rating\": 5,\n    \"testimonialContent\": \"Maheshwari Visuals provided exceptional service for our music distribution. Their platform is user-friendly and their support team is outstanding. Highly recommended!\",\n    \"profileImageUrl\": \"https://example.com/profile-john.jpg\",\n    \"status\": \"published\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials"
+							]
+						},
+						"description": "Create a new testimonial"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Testimonials (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "published",
+									"disabled": true,
+									"description": "Filter by status"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"disabled": true,
+									"description": "Filter by rating"
+								},
+								{
+									"key": "search",
+									"value": "john",
+									"disabled": true,
+									"description": "Search in customer name, company, designation"
+								}
+							]
+						},
+						"description": "Get all testimonials with admin pagination and filtering"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonial Statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"stats"
+							]
+						},
+						"description": "Get testimonial statistics and rating distribution"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonial by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}"
+							]
+						},
+						"description": "Get specific testimonial by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerName\": \"John Smith (Updated)\",\n    \"designation\": \"Senior Music Producer\",\n    \"company\": \"Smith Music Productions Ltd\",\n    \"rating\": 5,\n    \"testimonialContent\": \"Updated testimonial: Maheshwari Visuals continues to provide exceptional service for our music distribution. Their platform has improved significantly and their support team is outstanding. Highly recommended for all artists!\",\n    \"status\": \"published\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}"
+							]
+						},
+						"description": "Update an existing testimonial"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}"
+							]
+						},
+						"description": "Delete a testimonial"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public - Trending Labels",
+			"item": [
+				{
+					"name": "Get Trending Label Service Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"self"
+							]
+						},
+						"description": "Get trending label service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Trending Labels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels?limit=10&sortBy=monthlyStreams",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of labels to return"
+								},
+								{
+									"key": "sortBy",
+									"value": "monthlyStreams",
+									"description": "Sort by: monthlyStreams, totalReleases, totalArtists"
+								}
+							]
+						},
+						"description": "Get active trending labels with sorting options"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Trending Labels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/top",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"top"
+							]
+						},
+						"description": "Get top 5 trending labels by monthly streams"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Label Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"stats"
+							]
+						},
+						"description": "Get aggregate statistics for all active labels"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Labels by Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"categories"
+							]
+						},
+						"description": "Get trending labels categorized by streams, releases, artists"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Trending Label Management",
+			"item": [
+				{
+					"name": "Get Admin Trending Label Service Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"self"
+							]
+						},
+						"description": "Get admin trending label service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Trending Label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"labelNumber\": \"MV001\",\n    \"labelName\": \"Maheshwari Music\",\n    \"designation\": \"Independent Music Label\",\n    \"logoUrl\": \"https://example.com/maheshwari-logo.png\",\n    \"totalArtists\": 25,\n    \"totalReleases\": 150,\n    \"monthlyStreams\": 1200000,\n    \"status\": \"active\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels"
+							]
+						},
+						"description": "Create a new trending label"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Trending Labels (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels?page=1&limit=10&sortBy=monthlyStreams&sortOrder=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sortBy",
+									"value": "monthlyStreams",
+									"description": "Sort by field"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"description": "Sort order: asc or desc"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"disabled": true,
+									"description": "Filter by status"
+								},
+								{
+									"key": "search",
+									"value": "maheshwari",
+									"disabled": true,
+									"description": "Search in label name, number, designation"
+								}
+							]
+						},
+						"description": "Get all trending labels with admin pagination and sorting"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Label Statistics (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"stats"
+							]
+						},
+						"description": "Get trending label statistics and top performers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Label by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}"
+							]
+						},
+						"description": "Get specific trending label by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Trending Label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"labelName\": \"Maheshwari Music Premium\",\n    \"designation\": \"Premium Independent Music Label\",\n    \"totalArtists\": 30,\n    \"totalReleases\": 175,\n    \"monthlyStreams\": 1500000\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}"
+							]
+						},
+						"description": "Update an existing trending label"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Trending Label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}"
+							]
+						},
+						"description": "Delete a trending label"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public - Testimonials",
+			"item": [
+				{
+					"name": "Get All Published Testimonials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials?page=1&limit=10&rating=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Page number for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of items per page"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"disabled": true,
+									"description": "Filter by rating (1-5)"
+								}
+							]
+						},
+						"description": "Get all published testimonials with pagination and optional rating filter"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Testimonials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials/featured?limit=6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials",
+								"featured"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "6",
+									"description": "Number of featured testimonials to return"
+								}
+							]
+						},
+						"description": "Get featured testimonials (highest rated published testimonials)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonials by Rating",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials/rating/5?limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials",
+								"rating",
+								"5"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of testimonials to return"
+								}
+							]
+						},
+						"description": "Get published testimonials filtered by specific rating (1-5)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonial Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/testimonials/statistics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"testimonials",
+								"statistics"
+							]
+						},
+						"description": "Get testimonial statistics including average rating and rating distribution"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Testimonial Management",
+			"item": [
+				{
+					"name": "Create New Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerName\": \"Rajesh Kumar\",\n  \"designation\": \"Music Producer\",\n  \"company\": \"Sound Studios Mumbai\",\n  \"rating\": 5,\n  \"testimonialContent\": \"Maheshwari Visuals has been instrumental in distributing our music across all major platforms. Their professional service and timely delivery have made them our go-to partner for music distribution.\",\n  \"profileImageUrl\": \"https://example.com/profile-rajesh.jpg\",\n  \"status\": \"published\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials"
+							]
+						},
+						"description": "Create a new testimonial (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Testimonials (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials?page=1&limit=10&status=published&rating=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Page number for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of items per page"
+								},
+								{
+									"key": "status",
+									"value": "published",
+									"disabled": true,
+									"description": "Filter by status (draft/published)"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"disabled": true,
+									"description": "Filter by rating (1-5)"
+								}
+							]
+						},
+						"description": "Get all testimonials with admin privileges including drafts (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonial by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}"
+							]
+						},
+						"description": "Get specific testimonial by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerName\": \"Rajesh Kumar\",\n  \"designation\": \"Senior Music Producer\",\n  \"company\": \"Sound Studios Mumbai Pvt Ltd\",\n  \"rating\": 5,\n  \"testimonialContent\": \"Maheshwari Visuals continues to exceed our expectations with their professional music distribution services. Their platform is reliable, efficient, and their customer support is exceptional. Highly recommended for all music artists and labels.\",\n  \"profileImageUrl\": \"https://example.com/updated-profile-rajesh.jpg\",\n  \"status\": \"published\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}"
+							]
+						},
+						"description": "Update testimonial by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Testimonial Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"draft\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}",
+								"status"
+							]
+						},
+						"description": "Update testimonial status (draft/published) (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/{{testimonial_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"{{testimonial_id}}"
+							]
+						},
+						"description": "Delete testimonial by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Testimonial Statistics (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/testimonials/statistics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"testimonials",
+								"statistics"
+							]
+						},
+						"description": "Get detailed testimonial statistics including drafts (admin only)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public - Trending Labels",
+			"item": [
+				{
+					"name": "Get All Active Trending Labels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels?page=1&limit=10&sortBy=monthlyStreams&sortOrder=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Page number for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of items per page"
+								},
+								{
+									"key": "sortBy",
+									"value": "monthlyStreams",
+									"disabled": true,
+									"description": "Sort by field (labelName, totalArtists, totalReleases, monthlyStreams, createdAt)"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true,
+									"description": "Sort order (asc/desc)"
+								}
+							]
+						},
+						"description": "Get all active trending labels with pagination and sorting options"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Trending Labels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/top?limit=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"top"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5",
+									"description": "Number of top labels to return"
+								}
+							]
+						},
+						"description": "Get top trending labels sorted by monthly streams"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Labels by Artists Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/by-artists?minArtists=10&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"by-artists"
+							],
+							"query": [
+								{
+									"key": "minArtists",
+									"value": "10",
+									"description": "Minimum number of artists"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of labels to return"
+								}
+							]
+						},
+						"description": "Get trending labels filtered by minimum number of artists"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Labels by Releases Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/by-releases?minReleases=50&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"by-releases"
+							],
+							"query": [
+								{
+									"key": "minReleases",
+									"value": "50",
+									"description": "Minimum number of releases"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of labels to return"
+								}
+							]
+						},
+						"description": "Get trending labels filtered by minimum number of releases"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Labels Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/trending-labels/statistics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"trending-labels",
+								"statistics"
+							]
+						},
+						"description": "Get overall statistics for trending labels including totals and averages"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Trending Label Management",
+			"item": [
+				{
+					"name": "Create New Trending Label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"labelNumber\": \"MV001\",\n  \"labelName\": \"Melodic Waves Records\",\n  \"designation\": \"Independent Music Label\",\n  \"logoUrl\": \"https://example.com/melodic-waves-logo.png\",\n  \"totalArtists\": 25,\n  \"totalReleases\": 150,\n  \"monthlyStreams\": 2500000,\n  \"status\": \"active\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels"
+							]
+						},
+						"description": "Create a new trending label (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Trending Labels (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels?page=1&limit=10&status=active&sortBy=monthlyStreams&sortOrder=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Page number for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of items per page"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"disabled": true,
+									"description": "Filter by status (active/inactive)"
+								},
+								{
+									"key": "sortBy",
+									"value": "monthlyStreams",
+									"disabled": true,
+									"description": "Sort by field"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true,
+									"description": "Sort order (asc/desc)"
+								}
+							]
+						},
+						"description": "Get all trending labels with admin privileges including inactive ones (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Label by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}"
+							]
+						},
+						"description": "Get specific trending label by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Trending Label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"labelNumber\": \"MV001\",\n  \"labelName\": \"Melodic Waves Records Updated\",\n  \"designation\": \"Premium Independent Music Label\",\n  \"logoUrl\": \"https://example.com/updated-melodic-waves-logo.png\",\n  \"totalArtists\": 30,\n  \"totalReleases\": 180,\n  \"monthlyStreams\": 3000000,\n  \"status\": \"active\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}"
+							]
+						},
+						"description": "Update trending label by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Label Statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"totalArtists\": 35,\n  \"totalReleases\": 200,\n  \"monthlyStreams\": 3500000\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}/statistics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}",
+								"statistics"
+							]
+						},
+						"description": "Update label statistics (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Label Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"inactive\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}",
+								"status"
+							]
+						},
+						"description": "Update label status (active/inactive) (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Trending Label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/trending-labels/{{trending_label_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"trending-labels",
+								"{{trending_label_id}}"
+							]
+						},
+						"description": "Delete trending label by ID (admin only)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - User Management",
+			"item": [
+				{
+					"name": "Get Admin Analytics Service Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/analytics/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"analytics",
+								"self"
+							]
+						},
+						"description": "Get admin analytics service status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/users?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "john",
+									"disabled": true,
+									"description": "Search in name or email"
+								},
+								{
+									"key": "userType",
+									"value": "artist",
+									"disabled": true,
+									"description": "Filter by user type"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"disabled": true,
+									"description": "Filter by role"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"disabled": true,
+									"description": "Filter by active status"
+								}
+							]
+						},
+						"description": "Get all users with search, filtering and pagination"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public - Company Settings",
+			"item": [
+				{
+					"name": "Get Company Social Media Links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/social-media",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"social-media"
+							]
+						},
+						"description": "Get active company social media links for website display"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Contact Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"contact"
+							]
+						},
+						"description": "Get active company contact information for website display"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company YouTube Links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/youtube-links",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"youtube-links"
+							]
+						},
+						"description": "Get company YouTube dashboard links for website display"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Complete Company Settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/complete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"complete"
+							]
+						},
+						"description": "Get complete company settings including social media and contact info"
+					},
+					"response": []
+				},
+				{
+					"name": "Check Setup Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/company-settings/setup-status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"company-settings",
+								"setup-status"
+							]
+						},
+						"description": "Check if company settings setup is complete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Company Settings Management",
+			"item": [
+				{
+					"name": "Create Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"socialMedia\": {\n    \"instagram\": \"https://instagram.com/maheshwarivisuals\",\n    \"facebook\": \"https://facebook.com/maheshwarivisuals\",\n    \"linkedin\": \"https://linkedin.com/company/maheshwarivisuals\",\n    \"youtube\": \"https://youtube.com/maheshwarivisuals\",\n    \"website\": \"https://maheshwarivisuals.com\",\n    \"x\": \"https://x.com/maheshwarivisuals\",\n    \"youtubeLinks\": [\n      {\n        \"title\": \"Main Channel\",\n        \"url\": \"https://youtube.com/c/maheshwarivisuals\"\n      },\n      {\n        \"title\": \"Music Channel\",\n        \"url\": \"https://youtube.com/c/maheshwarimusicofficial\"\n      }\n    ]\n  },\n  \"contactInfo\": {\n    \"primaryPhone\": \"+91-9876543210\",\n    \"secondaryPhone\": \"+91-9876543211\",\n    \"primaryEmail\": \"contact@maheshwarivisuals.com\",\n    \"supportEmail\": \"support@maheshwarivisuals.com\",\n    \"businessEmail\": \"business@maheshwarivisuals.com\",\n    \"whatsappQRCode\": \"https://example.com/whatsapp-qr.png\",\n    \"physicalAddress\": {\n      \"street\": \"123 Music Street\",\n      \"city\": \"Mumbai\",\n      \"state\": \"Maharashtra\",\n      \"zipCode\": \"400001\",\n      \"country\": \"India\"\n    },\n    \"businessHours\": \"Monday to Friday: 9:00 AM - 6:00 PM IST\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings"
+							]
+						},
+						"description": "Create new company settings (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings?page=1&limit=10&status=active",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Page number for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of items per page"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"disabled": true,
+									"description": "Filter by status (active/inactive)"
+								}
+							]
+						},
+						"description": "Get all company settings with pagination and filtering (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Settings by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}"
+							]
+						},
+						"description": "Get specific company settings by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"socialMedia\": {\n    \"instagram\": \"https://instagram.com/maheshwarivisuals_updated\",\n    \"facebook\": \"https://facebook.com/maheshwarivisuals_updated\",\n    \"linkedin\": \"https://linkedin.com/company/maheshwarivisuals_updated\",\n    \"youtube\": \"https://youtube.com/maheshwarivisuals_updated\",\n    \"website\": \"https://maheshwarivisuals.com\",\n    \"x\": \"https://x.com/maheshwarivisuals_updated\",\n    \"youtubeLinks\": [\n      {\n        \"title\": \"Updated Main Channel\",\n        \"url\": \"https://youtube.com/c/maheshwarivisuals_new\"\n      }\n    ]\n  },\n  \"contactInfo\": {\n    \"primaryPhone\": \"+91-9876543212\",\n    \"secondaryPhone\": \"+91-9876543213\",\n    \"primaryEmail\": \"contact@maheshwarivisuals.com\",\n    \"supportEmail\": \"help@maheshwarivisuals.com\",\n    \"businessEmail\": \"business@maheshwarivisuals.com\",\n    \"whatsappQRCode\": \"https://example.com/new-whatsapp-qr.png\",\n    \"physicalAddress\": {\n      \"street\": \"456 Updated Music Street\",\n      \"city\": \"Mumbai\",\n      \"state\": \"Maharashtra\",\n      \"zipCode\": \"400002\",\n      \"country\": \"India\"\n    },\n    \"businessHours\": \"Monday to Saturday: 9:00 AM - 7:00 PM IST\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}"
+							]
+						},
+						"description": "Update company settings by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company Settings Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"inactive\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}",
+								"status"
+							]
+						},
+						"description": "Update company settings status (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}"
+							]
+						},
+						"description": "Delete company settings by ID (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Add YouTube Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"New Music Channel\",\n  \"url\": \"https://youtube.com/c/newmusicchannel\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}/youtube-links",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}",
+								"youtube-links"
+							]
+						},
+						"description": "Add new YouTube link to company settings (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update YouTube Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Music Channel\",\n  \"url\": \"https://youtube.com/c/updatedmusicchannel\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}/youtube-links/0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}",
+								"youtube-links",
+								"0"
+							]
+						},
+						"description": "Update YouTube link by index (admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove YouTube Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/admin/company-settings/{{company_settings_id}}/youtube-links/0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"admin",
+								"company-settings",
+								"{{company_settings_id}}",
+								"youtube-links",
+								"0"
+							]
+						},
+						"description": "Remove YouTube link by index (admin only)"
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -3294,6 +6177,26 @@
 		},
 		{
 			"key": "report_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "faq_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "company_settings_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "testimonial_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "trending_label_id",
 			"value": "",
 			"type": "string"
 		}

@@ -9,6 +9,10 @@ import releaseRouter from './release.route.js';
 import advanceReleaseRouter from './advance-release.route.js';
 import monthManagementRouter from './month-management.route.js';
 import reportRouter from './report.route.js';
+import faqRouter from './faq.route.js';
+import testimonialRouter from './testimonial.route.js';
+import trendingLabelRouter from './trending-label.route.js';
+import companySettingsRouter from './company-settings.route.js';
 
 const router = Router();
 
@@ -22,6 +26,10 @@ router.use('/releases', releaseRouter);
 router.use('/advance-releases', advanceReleaseRouter);
 router.use('/months', monthManagementRouter);
 router.use('/reports', reportRouter);
+router.use('/faqs', faqRouter);
+router.use('/testimonials', testimonialRouter);
+router.use('/trending-labels', trendingLabelRouter);
+router.use('/company-settings', companySettingsRouter);
 
 
 export default router;

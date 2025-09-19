@@ -210,3 +210,26 @@ export const EReportStatus = Object.freeze({
     COMPLETED: 'completed',
     FAILED: 'failed'
 });
+
+export const EFAQCategory = Object.freeze({
+    UPLOAD_PROCESS: 'Upload Process',
+    DISTRIBUTION: 'Distribution',
+    ROYALTIES: 'Royalties',
+    RELEASE_MANAGEMENT: 'Release Management',
+    TECHNICAL_SUPPORT: 'Technical Support'
+});
+
+export const ETestimonialStatus = Object.freeze({
+    DRAFT: 'draft',
+    PUBLISHED: 'published'
+});
+
+export const ETrendingLabelStatus = Object.freeze({
+    ACTIVE: 'active',
+    INACTIVE: 'inactive'
+});
+
+export const ECompanySettingsStatus = Object.freeze({
+    ACTIVE: 'active',
+    INACTIVE: 'inactive'
+});

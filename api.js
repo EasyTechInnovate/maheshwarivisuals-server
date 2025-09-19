@@ -229,6 +229,117 @@ const apiData = [
       { method: "GET", path: "/:id/data", description: "Get paginated report data with search/sort" },
       { method: "GET", path: "/:id/search", description: "Search within report data" }
     ]
+  },
+  {
+    name: "FAQ",
+    url: "/v1/faqs",
+    description: "Public access to frequently asked questions organized by categories",
+    endpoints: [
+      { method: "GET", path: "/self", description: "FAQ service health check" },
+      { method: "GET", path: "/", description: "Get all active FAQs grouped by category" },
+      { method: "GET", path: "/categories", description: "Get all available FAQ categories" }
+    ]
+  },
+  {
+    name: "Admin - FAQ Management",
+    url: "/v1/admin/faqs",
+    description: "Admin management of FAQs with full CRUD operations",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Admin FAQ service health check" },
+      { method: "POST", path: "/", description: "Create new FAQ" },
+      { method: "GET", path: "/", description: "Get all FAQs with pagination and filtering" },
+      { method: "GET", path: "/:faqId", description: "Get FAQ details by ID" },
+      { method: "PUT", path: "/:faqId", description: "Update existing FAQ" },
+      { method: "DELETE", path: "/:faqId", description: "Delete FAQ" }
+    ]
+  },
+  {
+    name: "Testimonials",
+    url: "/v1/testimonials",
+    description: "Public access to customer testimonials and reviews",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Testimonial service health check" },
+      { method: "GET", path: "/", description: "Get published testimonials with optional rating filter" },
+      { method: "GET", path: "/featured", description: "Get featured testimonials (4+ rating)" },
+      { method: "GET", path: "/by-rating", description: "Get testimonials grouped by rating" }
+    ]
+  },
+  {
+    name: "Admin - Testimonial Management",
+    url: "/v1/admin/testimonials",
+    description: "Admin management of customer testimonials with full CRUD operations",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Admin testimonial service health check" },
+      { method: "POST", path: "/", description: "Create new testimonial" },
+      { method: "GET", path: "/", description: "Get all testimonials with pagination and filtering" },
+      { method: "GET", path: "/stats", description: "Get testimonial statistics and rating distribution" },
+      { method: "GET", path: "/:testimonialId", description: "Get testimonial details by ID" },
+      { method: "PUT", path: "/:testimonialId", description: "Update existing testimonial" },
+      { method: "DELETE", path: "/:testimonialId", description: "Delete testimonial" }
+    ]
+  },
+  {
+    name: "Trending Labels",
+    url: "/v1/trending-labels",
+    description: "Public access to trending music labels and their statistics",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Trending label service health check" },
+      { method: "GET", path: "/", description: "Get active trending labels with sorting options" },
+      { method: "GET", path: "/top", description: "Get top 5 trending labels by monthly streams" },
+      { method: "GET", path: "/stats", description: "Get aggregate statistics for all active labels" },
+      { method: "GET", path: "/categories", description: "Get trending labels categorized by streams, releases, artists" }
+    ]
+  },
+  {
+    name: "Admin - Trending Label Management",
+    url: "/v1/admin/trending-labels",
+    description: "Admin management of trending labels with full CRUD operations",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Admin trending label service health check" },
+      { method: "POST", path: "/", description: "Create new trending label" },
+      { method: "GET", path: "/", description: "Get all trending labels with pagination and sorting" },
+      { method: "GET", path: "/stats", description: "Get trending label statistics and top performers" },
+      { method: "GET", path: "/:labelId", description: "Get trending label details by ID" },
+      { method: "PUT", path: "/:labelId", description: "Update existing trending label" },
+      { method: "DELETE", path: "/:labelId", description: "Delete trending label" }
+    ]
+  },
+  {
+    name: "Admin - User Management",
+    url: "/v1/admin/users",
+    description: "Admin user management and analytics",
+    endpoints: [
+      { method: "GET", path: "/", description: "Get all users with search, filtering and pagination" },
+      { method: "GET", path: "/analytics/self", description: "Admin analytics service health check" }
+    ]
+  },
+  {
+    name: "Company Settings",
+    url: "/v1/company-settings",
+    description: "Public access to company information for website display",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Company settings service health check" },
+      { method: "GET", path: "/", description: "Get complete company settings (social media + contact info)" },
+      { method: "GET", path: "/social-media", description: "Get social media links only" },
+      { method: "GET", path: "/contact", description: "Get contact information only" },
+      { method: "GET", path: "/youtube-links", description: "Get YouTube dashboard links array" }
+    ]
+  },
+  {
+    name: "Admin - Company Settings Management",
+    url: "/v1/admin/company-settings",
+    description: "Admin management of company information with full CRUD operations",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Admin company settings service health check" },
+      { method: "POST", path: "/", description: "Create initial company settings" },
+      { method: "GET", path: "/", description: "Get company settings for admin" },
+      { method: "GET", path: "/setup-status", description: "Check if company setup is complete" },
+      { method: "GET", path: "/:settingsId", description: "Get company settings by ID" },
+      { method: "PUT", path: "/:settingsId", description: "Update company settings" },
+      { method: "DELETE", path: "/:settingsId", description: "Delete company settings" },
+      { method: "POST", path: "/:settingsId/youtube-links", description: "Add YouTube link to dashboard" },
+      { method: "DELETE", path: "/:settingsId/youtube-links/:linkIndex", description: "Remove YouTube link from dashboard" }
+    ]
   }
 ];
 
