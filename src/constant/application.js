@@ -608,3 +608,25 @@ export const ERoyaltyMetric = Object.freeze({
     AVERAGE_MONTHLY: 'average_monthly',
     BEST_MONTH: 'best_month'
 });
+
+// MCN Management Enums
+export const EMCNRequestStatus = Object.freeze({
+    PENDING: 'pending',
+    APPROVED: 'approved',
+    REJECTED: 'rejected',
+    REMOVAL_REQUESTED: 'removal_requested',
+    REMOVAL_APPROVED: 'removal_approved'
+});
+
+export const EMCNChannelStatus = Object.freeze({
+    ACTIVE: 'active',
+    INACTIVE: 'inactive',
+    SUSPENDED: 'suspended'
+});
+
+export const EMCNRequestAction = Object.freeze({
+    APPROVE: 'approve',
+    REJECT: 'reject',
+    REQUEST_REMOVAL: 'request_removal',
+    APPROVE_REMOVAL: 'approve_removal'
+});

@@ -15,6 +15,7 @@ import trendingLabelRouter from './trending-label.route.js';
 import companySettingsRouter from './company-settings.route.js';
 import teamMemberRouter from './team-member.route.js';
 import supportTicketRouter from './support-ticket.route.js';
+import mcnRouter from './mcn.route.js';
 
 const router = Router();
 
@@ -34,6 +35,7 @@ router.use('/trending-labels', trendingLabelRouter);
 router.use('/company-settings', companySettingsRouter);
 router.use('/team-members', teamMemberRouter);
 router.use('/support-tickets', supportTicketRouter);
+router.use('/mcn', mcnRouter);
 
 
 export default router;

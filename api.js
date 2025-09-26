@@ -409,6 +409,41 @@ const apiData = [
       { method: "POST", path: "/:settingsId/youtube-links", description: "Add YouTube link to dashboard" },
       { method: "DELETE", path: "/:settingsId/youtube-links/:linkIndex", description: "Remove YouTube link from dashboard" }
     ]
+  },
+  {
+    name: "MCN Management",
+    url: "/v1/mcn",
+    description: "Multi-Channel Network (MCN) application and management system for YouTube channels",
+    endpoints: [
+      { method: "GET", path: "/self", description: "MCN service health check" },
+      { method: "POST", path: "/request", description: "Submit MCN application request with YouTube channel details" },
+      { method: "GET", path: "/my-requests", description: "Get user's MCN requests with pagination and filtering" },
+      { method: "GET", path: "/my-requests/:requestId", description: "Get specific MCN request details" },
+      { method: "GET", path: "/my-channels", description: "Get user's approved MCN channels" },
+      { method: "GET", path: "/my-channels/:channelId", description: "Get specific MCN channel details" },
+      { method: "POST", path: "/my-requests/:requestId/request-removal", description: "Request removal from MCN network" },
+      { method: "GET", path: "/my-stats", description: "Get user's MCN statistics and metrics" }
+    ]
+  },
+  {
+    name: "Admin - MCN Management",
+    url: "/v1/mcn/admin",
+    description: "Admin management of MCN applications, channel creation, and network oversight",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Admin MCN service health check" },
+      { method: "GET", path: "/requests", description: "Get all MCN requests with advanced filtering and search" },
+      { method: "GET", path: "/requests/pending", description: "Get pending MCN requests for review" },
+      { method: "GET", path: "/requests/:requestId", description: "Get detailed MCN request information" },
+      { method: "POST", path: "/requests/:requestId/review", description: "Approve or reject MCN application with admin notes" },
+      { method: "POST", path: "/requests/:requestId/create-channel", description: "Create MCN channel after approval with revenue share setup" },
+      { method: "POST", path: "/requests/:requestId/process-removal", description: "Process channel removal requests" },
+      { method: "GET", path: "/channels", description: "Get all MCN channels with filtering by manager, status, etc." },
+      { method: "GET", path: "/channels/:channelId", description: "Get detailed MCN channel information" },
+      { method: "PUT", path: "/channels/:channelId", description: "Update MCN channel details and revenue information" },
+      { method: "PATCH", path: "/channels/:channelId/status", description: "Update channel status (active/suspended/inactive)" },
+      { method: "DELETE", path: "/channels/:channelId", description: "Delete MCN channel (admin only)" },
+      { method: "GET", path: "/stats", description: "Get comprehensive MCN statistics, revenue metrics, and analytics" }
+    ]
   }
 ];
 

@@ -7415,6 +7415,541 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "MCN Management",
+			"item": [
+				{
+					"name": "MCN Service Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"self"
+							]
+						},
+						"description": "MCN service health check"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit MCN Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"youtubeChannelName\": \"Test Channel\",\n  \"youtubeChannelId\": \"UC1234567890\",\n  \"subscriberCount\": 10000,\n  \"totalViewsCountsIn28Days\": 50000,\n  \"monetizationEligibility\": true,\n  \"isAdSenseEnabled\": true,\n  \"hasCopyrightStrikes\": false,\n  \"isContentOriginal\": true,\n  \"isPartOfAnotherMCN\": false,\n  \"otherMCNDetails\": null,\n  \"channelRevenueLastMonth\": 500,\n  \"analyticsScreenshotUrl\": \"https://example.com/analytics.png\",\n  \"revenueScreenshotUrl\": \"https://example.com/revenue.png\",\n  \"isLegalOwner\": true,\n  \"agreesToTerms\": true,\n  \"understandsOwnership\": true,\n  \"consentsToContact\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"request"
+							]
+						},
+						"description": "Submit MCN application request"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My MCN Requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/my-requests?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"my-requests"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get user's MCN requests with pagination"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My MCN Channels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/my-channels?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"my-channels"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get user's MCN channels"
+					},
+					"response": []
+				},
+				{
+					"name": "Request Channel Removal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/my-requests/{{request_id}}/request-removal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"my-requests",
+								"{{request_id}}",
+								"request-removal"
+							]
+						},
+						"description": "Request removal of MCN channel"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - MCN Management",
+			"item": [
+				{
+					"name": "Admin MCN Service Health Check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"self"
+							]
+						},
+						"description": "Admin MCN service health check"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All MCN Requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/requests?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get all MCN requests with filters"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pending MCN Requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/requests/pending",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"requests",
+								"pending"
+							]
+						},
+						"description": "Get pending MCN requests for review"
+					},
+					"response": []
+				},
+				{
+					"name": "Review MCN Request (Approve)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"approve\",\n  \"adminNotes\": \"Channel meets all requirements\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/requests/{{request_id}}/review",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"requests",
+								"{{request_id}}",
+								"review"
+							]
+						},
+						"description": "Approve MCN request"
+					},
+					"response": []
+				},
+				{
+					"name": "Review MCN Request (Reject)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"reject\",\n  \"rejectionReason\": \"Channel does not meet minimum requirements\",\n  \"adminNotes\": \"Insufficient subscriber count\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/requests/{{request_id}}/review",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"requests",
+								"{{request_id}}",
+								"review"
+							]
+						},
+						"description": "Reject MCN request"
+					},
+					"response": []
+				},
+				{
+					"name": "Create MCN Channel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"channelName\": \"Test Channel\",\n  \"channelLink\": \"https://youtube.com/channel/UC1234567890\",\n  \"revenueShare\": 70,\n  \"channelManager\": \"John Doe\",\n  \"notes\": \"Channel setup complete\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/requests/{{request_id}}/create-channel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"requests",
+								"{{request_id}}",
+								"create-channel"
+							]
+						},
+						"description": "Create MCN channel after approval"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All MCN Channels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/channels?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get all MCN channels"
+					},
+					"response": []
+				},
+				{
+					"name": "Update MCN Channel Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"suspended\",\n  \"suspensionReason\": \"Policy violation\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/channels/{{channel_id}}/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"channels",
+								"{{channel_id}}",
+								"status"
+							]
+						},
+						"description": "Update MCN channel status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get MCN Statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/mcn/admin/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"mcn",
+								"admin",
+								"stats"
+							]
+						},
+						"description": "Get MCN statistics and metrics"
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
