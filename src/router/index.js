@@ -16,6 +16,8 @@ import companySettingsRouter from './company-settings.route.js';
 import teamMemberRouter from './team-member.route.js';
 import supportTicketRouter from './support-ticket.route.js';
 import mcnRouter from './mcn.route.js';
+import marketingRouter from './marketing.route.js';
+import fanLinkRouter from './fan-link.route.js';
 
 const router = Router();
 
@@ -36,6 +38,8 @@ router.use('/company-settings', companySettingsRouter);
 router.use('/team-members', teamMemberRouter);
 router.use('/support-tickets', supportTicketRouter);
 router.use('/mcn', mcnRouter);
+router.use('/marketing', marketingRouter);
+router.use('/fan-links', fanLinkRouter);
 
 
 export default router;

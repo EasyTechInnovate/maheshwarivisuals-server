@@ -630,3 +630,132 @@ export const EMCNRequestAction = Object.freeze({
     REQUEST_REMOVAL: 'request_removal',
     APPROVE_REMOVAL: 'approve_removal'
 });
+
+// Marketing Management Enums
+export const EMarketingSubmissionStatus = Object.freeze({
+    PENDING: 'pending',
+    APPROVED: 'approved',
+    REJECTED: 'rejected'
+});
+
+export const EMarketingSubmissionType = Object.freeze({
+    SYNC: 'sync',
+    PLAYLIST_PITCHING: 'playlist_pitching'
+});
+
+export const ESyncProjectSuitability = Object.freeze({
+    AD_CAMPAIGNS: 'ad_campaigns',
+    OTT_WEB_SERIES: 'ott_web_series',
+    TV_FILM_SCORE: 'tv_film_score',
+    TRAILERS: 'trailers',
+    PODCASTS: 'podcasts',
+    CORPORATE_FILMS: 'corporate_films',
+    GAMING_ANIMATION: 'gaming_animation',
+    SHORT_FILMS_STUDENT: 'short_films_student',
+    FASHION_PRODUCT_LAUNCH: 'fashion_product_launch',
+    FESTIVAL_DOCUMENTARIES: 'festival_documentaries'
+});
+
+export const EMusicGenres = Object.freeze({
+    POP: 'pop',
+    ROCK: 'rock',
+    HIP_HOP: 'hip_hop',
+    ELECTRONIC: 'electronic',
+    JAZZ: 'jazz',
+    CLASSICAL: 'classical',
+    REGGAE: 'reggae',
+    COUNTRY: 'country',
+    BLUES: 'blues',
+    FOLK: 'folk',
+    R_AND_B: 'r_and_b',
+    FUNK: 'funk',
+    DISCO: 'disco',
+    HOUSE: 'house',
+    TECHNO: 'techno',
+    TRANCE: 'trance',
+    AMBIENT: 'ambient',
+    INDIAN_CLASSICAL: 'indian_classical',
+    BOLLYWOOD: 'bollywood',
+    BHANGRA: 'bhangra',
+    DEVOTIONAL: 'devotional'
+});
+
+export const EMusicMood = Object.freeze({
+    EMOTIONAL: 'emotional',
+    ENERGETIC: 'energetic',
+    ROMANTIC: 'romantic',
+    AGGRESSIVE: 'aggressive',
+    CALM: 'calm',
+    HAPPY: 'happy',
+    SAD: 'sad',
+    MOTIVATIONAL: 'motivational',
+    RELAXING: 'relaxing',
+    INTENSE: 'intense',
+    GENRE_SPECIFIC: 'genre_specific',
+    FEATURED: 'featured',
+    EDITORIAL: 'editorial'
+});
+
+export const EMusicTheme = Object.freeze({
+    LOVE: 'love',
+    HEARTBREAK: 'heartbreak',
+    FRIENDSHIP: 'friendship',
+    PARTY: 'party',
+    CELEBRATION: 'celebration',
+    INSPIRATION: 'inspiration',
+    NATURE: 'nature',
+    SPIRITUAL: 'spiritual',
+    ADVENTURE: 'adventure',
+    NOSTALGIA: 'nostalgia',
+    FREEDOM: 'freedom',
+    STRUGGLE: 'struggle'
+});
+
+export const EMusicLanguage = Object.freeze({
+    HINDI: 'hindi',
+    ENGLISH: 'english',
+    PUNJABI: 'punjabi',
+    TAMIL: 'tamil',
+    TELUGU: 'telugu',
+    BENGALI: 'bengali',
+    MARATHI: 'marathi',
+    GUJARATI: 'gujarati',
+    KANNADA: 'kannada',
+    MALAYALAM: 'malayalam',
+    URDU: 'urdu',
+    INSTRUMENTAL: 'instrumental',
+    OTHER: 'other'
+});
+
+export const EPROAffiliation = Object.freeze({
+    BMI: 'bmi',
+    ASCAP: 'ascap',
+    IPRS: 'iprs',
+    PRS: 'prs',
+    SOCAN: 'socan',
+    SACEM: 'sacem',
+    GEMA: 'gema',
+    OTHER: 'other',
+    NONE: 'none'
+});
+
+// Fan Link Builder Enums
+export const EFanLinkStatus = Object.freeze({
+    ACTIVE: 'active',
+    INACTIVE: 'inactive'
+});
+
+export const EFanLinkPlatform = Object.freeze({
+    SPOTIFY: 'spotify',
+    APPLE_MUSIC: 'apple_music',
+    AMAZON_MUSIC: 'amazon_music',
+    YOUTUBE_MUSIC: 'youtube_music',
+    DEEZER: 'deezer',
+    TIDAL: 'tidal',
+    PANDORA: 'pandora',
+    SOUNDCLOUD: 'soundcloud',
+    JIOSAAVN: 'jiosaavn',
+    WYNK: 'wynk',
+    GAANA: 'gaana',
+    HUNGAMA: 'hungama'
+});

@@ -444,6 +444,55 @@ const apiData = [
       { method: "DELETE", path: "/channels/:channelId", description: "Delete MCN channel (admin only)" },
       { method: "GET", path: "/stats", description: "Get comprehensive MCN statistics, revenue metrics, and analytics" }
     ]
+  },
+  {
+    name: "Marketing Management",
+    url: "/v1/marketing",
+    description: "Music marketing services including sync licensing and playlist pitching submissions",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Marketing service health check" },
+      { method: "POST", path: "/sync/submit", description: "Submit sync licensing request with track details and project suitability" },
+      { method: "POST", path: "/playlist-pitching/submit", description: "Submit playlist pitching request for streaming platforms" },
+      { method: "GET", path: "/sync/my-submissions", description: "Get user's sync submissions with pagination and filtering" },
+      { method: "GET", path: "/playlist-pitching/my-submissions", description: "Get user's playlist pitching submissions" },
+      { method: "GET", path: "/sync/my-submissions/:submissionId", description: "Get specific sync submission details" },
+      { method: "GET", path: "/playlist-pitching/my-submissions/:submissionId", description: "Get specific playlist pitching submission details" },
+      { method: "GET", path: "/my-stats", description: "Get user's marketing submission statistics" }
+    ]
+  },
+  {
+    name: "Admin - Marketing Management",
+    url: "/v1/marketing/admin",
+    description: "Admin management of sync licensing and playlist pitching submissions with review capabilities",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Admin marketing service health check" },
+      { method: "GET", path: "/sync/submissions", description: "Get all sync submissions with advanced filtering and search" },
+      { method: "GET", path: "/playlist-pitching/submissions", description: "Get all playlist pitching submissions" },
+      { method: "GET", path: "/sync/submissions/pending", description: "Get pending sync submissions for review" },
+      { method: "GET", path: "/playlist-pitching/submissions/pending", description: "Get pending playlist pitching submissions" },
+      { method: "GET", path: "/sync/submissions/:submissionId", description: "Get detailed sync submission information" },
+      { method: "GET", path: "/playlist-pitching/submissions/:submissionId", description: "Get detailed playlist pitching submission" },
+      { method: "POST", path: "/sync/submissions/:submissionId/review", description: "Approve or reject sync submission with admin notes" },
+      { method: "POST", path: "/playlist-pitching/submissions/:submissionId/review", description: "Approve or reject playlist pitching submission" },
+      { method: "GET", path: "/playlist-pitching/submissions/store/:store", description: "Get playlist pitching submissions by streaming platform" },
+      { method: "GET", path: "/stats", description: "Get comprehensive marketing statistics and submission metrics" }
+    ]
+  },
+  {
+    name: "Fan Link Builder",
+    url: "/v1/fan-links",
+    description: "Create and manage custom fan link pages with multiple platform links and analytics tracking",
+    endpoints: [
+      { method: "GET", path: "/self", description: "Fan Link Builder service health check" },
+      { method: "POST", path: "/create", description: "Create new fan link with custom URL and platform links" },
+      { method: "GET", path: "/my-links", description: "Get user's fan links with pagination, filtering, and search" },
+      { method: "GET", path: "/my-links/:fanLinkId", description: "Get specific fan link details by ID" },
+      { method: "PUT", path: "/my-links/:fanLinkId", description: "Update fan link title, description, URL, or platform links" },
+      { method: "DELETE", path: "/my-links/:fanLinkId", description: "Delete fan link permanently" },
+      { method: "GET", path: "/my-stats", description: "Get user's fan link statistics including clicks and performance" },
+      { method: "GET", path: "/check-availability/:customUrl", description: "Check if custom URL is available for use" },
+      { method: "GET", path: "/link/:customUrl", description: "Get fan link by custom URL (public endpoint with click tracking)" }
+    ]
   }
 ];
 

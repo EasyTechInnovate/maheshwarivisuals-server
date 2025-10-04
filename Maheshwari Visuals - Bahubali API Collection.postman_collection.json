@@ -7950,6 +7950,812 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Marketing Management",
+			"item": [
+				{
+					"name": "Marketing Service Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"self"
+							]
+						},
+						"description": "Marketing service health check"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Sync Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"trackName\": \"Sample Track\",\n  \"artistName\": \"Sample Artist\",\n  \"labelName\": \"Sample Label\",\n  \"isrc\": \"USRC17607839\",\n  \"genres\": [\"pop\", \"electronic\"],\n  \"mood\": \"energetic\",\n  \"isVocalsPresent\": true,\n  \"language\": \"english\",\n  \"theme\": \"love\",\n  \"masterRightsOwner\": \"Sample Label\",\n  \"publishingRightsOwner\": \"Sample Publisher\",\n  \"isFullyClearedForSync\": true,\n  \"proAffiliation\": \"ascap\",\n  \"trackLinks\": [\n    {\n      \"platform\": \"Spotify\",\n      \"url\": \"https://open.spotify.com/track/example\"\n    }\n  ],\n  \"projectSuitability\": [\"ad_campaigns\", \"ott_web_series\"]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/sync/submit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"sync",
+								"submit"
+							]
+						},
+						"description": "Submit sync licensing request"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Playlist Pitching Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"trackName\": \"Sample Track\",\n  \"artistName\": \"Sample Artist\",\n  \"labelName\": \"Sample Label\",\n  \"isrc\": \"USRC17607839\",\n  \"genres\": [\"pop\", \"electronic\"],\n  \"mood\": \"energetic\",\n  \"isVocalsPresent\": true,\n  \"language\": \"english\",\n  \"theme\": \"love\",\n  \"selectedStore\": \"Spotify\",\n  \"trackLink\": \"https://open.spotify.com/track/example\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/playlist-pitching/submit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"playlist-pitching",
+								"submit"
+							]
+						},
+						"description": "Submit playlist pitching request"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Sync Submissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/sync/my-submissions?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"sync",
+								"my-submissions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get user's sync submissions"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Playlist Pitching Submissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/playlist-pitching/my-submissions?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"playlist-pitching",
+								"my-submissions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get user's playlist pitching submissions"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Marketing Stats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/my-stats?type=both",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"my-stats"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "both",
+									"description": "Options: sync, playlist_pitching, both"
+								}
+							]
+						},
+						"description": "Get user's marketing submission statistics"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin - Marketing Management",
+			"item": [
+				{
+					"name": "Admin Marketing Service Health Check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"self"
+							]
+						},
+						"description": "Admin marketing service health check"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sync Submissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/sync/submissions?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"sync",
+								"submissions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get all sync submissions with filters"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pending Sync Submissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/sync/submissions/pending",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"sync",
+								"submissions",
+								"pending"
+							]
+						},
+						"description": "Get pending sync submissions for review"
+					},
+					"response": []
+				},
+				{
+					"name": "Review Sync Submission (Approve)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"approve\",\n  \"adminNotes\": \"Sync submission meets all requirements\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/sync/submissions/{{submission_id}}/review",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"sync",
+								"submissions",
+								"{{submission_id}}",
+								"review"
+							]
+						},
+						"description": "Approve sync submission"
+					},
+					"response": []
+				},
+				{
+					"name": "Review Playlist Pitching (Approve)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"approve\",\n  \"adminNotes\": \"Playlist pitching submission approved\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/playlist-pitching/submissions/{{submission_id}}/review",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"playlist-pitching",
+								"submissions",
+								"{{submission_id}}",
+								"review"
+							]
+						},
+						"description": "Approve playlist pitching submission"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Pitching by Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/playlist-pitching/submissions/store/Spotify",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"playlist-pitching",
+								"submissions",
+								"store",
+								"Spotify"
+							]
+						},
+						"description": "Get playlist pitching submissions by store"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Marketing Statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/marketing/admin/stats?type=both",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"marketing",
+								"admin",
+								"stats"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "both"
+								}
+							]
+						},
+						"description": "Get comprehensive marketing statistics"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fan Link Builder",
+			"item": [
+				{
+					"name": "Fan Link Service Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"self"
+							]
+						},
+						"description": "Fan Link Builder service health check"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Fan Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"My Latest Single\",\n  \"description\": \"Listen to my latest single across all platforms\",\n  \"customUrl\": \"my-latest-single\",\n  \"platformLinks\": [\n    {\n      \"platform\": \"spotify\",\n      \"link\": \"https://open.spotify.com/track/example\",\n      \"isActive\": true\n    },\n    {\n      \"platform\": \"apple_music\",\n      \"link\": \"https://music.apple.com/album/example\",\n      \"isActive\": true\n    },\n    {\n      \"platform\": \"youtube_music\",\n      \"link\": \"https://music.youtube.com/watch?v=example\",\n      \"isActive\": true\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"create"
+							]
+						},
+						"description": "Create a new fan link with platform links"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Fan Links",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/my-links?page=1&limit=10&status=active&search=single",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"my-links"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Page number for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Number of items per page"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"disabled": true,
+									"description": "Filter by status (active/inactive)"
+								},
+								{
+									"key": "search",
+									"value": "single",
+									"disabled": true,
+									"description": "Search in title, description, or custom URL"
+								}
+							]
+						},
+						"description": "Get user's fan links with pagination and filtering"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fan Link by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/my-links/{{fan_link_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"my-links",
+								"{{fan_link_id}}"
+							]
+						},
+						"description": "Get specific fan link by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Fan Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"My Latest Single - Updated\",\n  \"description\": \"Listen to my updated latest single across all platforms\",\n  \"customUrl\": \"my-latest-single-v2\",\n  \"platformLinks\": [\n    {\n      \"platform\": \"spotify\",\n      \"link\": \"https://open.spotify.com/track/updated-example\",\n      \"isActive\": true\n    },\n    {\n      \"platform\": \"apple_music\",\n      \"link\": \"https://music.apple.com/album/updated-example\",\n      \"isActive\": true\n    }\n  ],\n  \"status\": \"active\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/my-links/{{fan_link_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"my-links",
+								"{{fan_link_id}}"
+							]
+						},
+						"description": "Update fan link details"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Fan Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/my-links/{{fan_link_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"my-links",
+								"{{fan_link_id}}"
+							]
+						},
+						"description": "Delete fan link"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Fan Link Stats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/my-stats?timeframe=all_time",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"my-stats"
+							],
+							"query": [
+								{
+									"key": "timeframe",
+									"value": "all_time",
+									"description": "Options: last_7_days, last_30_days, last_90_days, all_time"
+								}
+							]
+						},
+						"description": "Get user's fan link statistics"
+					},
+					"response": []
+				},
+				{
+					"name": "Check Custom URL Availability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/check-availability/{{custom_url}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"check-availability",
+								"{{custom_url}}"
+							]
+						},
+						"description": "Check if custom URL is available for use"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fan Link by Custom URL (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/fan-links/link/{{custom_url}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"fan-links",
+								"link",
+								"{{custom_url}}"
+							]
+						},
+						"description": "Get fan link by custom URL - public endpoint (increments click count)"
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -8062,6 +8868,16 @@
 		{
 			"key": "ticket_id",
 			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "fan_link_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "custom_url",
+			"value": "my-test-link",
 			"type": "string"
 		}
 	]
