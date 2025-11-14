@@ -993,6 +993,408 @@
 			]
 		},
 		{
+			"name": "Advanced Releases",
+			"item": [
+				{
+					"name": "Advanced Release Service Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/self",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"self"
+							]
+						},
+						"description": "Check advanced release service health"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Sublabels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/sublabels",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"sublabels"
+							]
+						},
+						"description": "Get available sublabels for the authenticated user. Returns sublabel IDs to use in Step 1."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Advanced Release",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var jsonData = pm.response.json();",
+									"    if (jsonData.data && jsonData.data.releaseId) {",
+									"        pm.collectionVariables.set('advanceReleaseId', jsonData.data.releaseId);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"releaseType\": \"single\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"create"
+							]
+						},
+						"description": "Create a new advanced release. Release types: single, album, mini_album, ringtone_release. Response includes next step guidance."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Step 1 - Cover Art & Release Info",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"coverArt\": {\n    \"imageUrl\": \"https://example.com/cover-art.jpg\",\n    \"imageSize\": 500000,\n    \"imageFormat\": \"jpg\"\n  },\n  \"releaseInfo\": {\n    \"releaseName\": \"My Amazing Album\",\n    \"releaseVersion\": \"Deluxe Edition\",\n    \"catalog\": \"CAT-2025-001\",\n    \"releaseType\": \"single\",\n    \"primaryArtists\": [\"Artist One\", \"Artist Two\"],\n    \"variousArtists\": [],\n    \"featuringArtists\": [\"Featured Artist\"],\n    \"needsUPC\": false,\n    \"upcCode\": \"\",\n    \"primaryGenre\": \"bollywood\",\n    \"secondaryGenre\": \"romantic\",\n    \"labelName\": \"MaheshwariVisuals\",\n    \"cLine\": {\n      \"year\": 2025,\n      \"text\": \"2025 Maheshwari Visuals\"\n    },\n    \"pLine\": {\n      \"year\": 2025,\n      \"text\": \"2025 Test Producer\"\n    },\n    \"releasePricingTier\": \"front\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}/step1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}",
+								"step1"
+							]
+						},
+						"description": "Update step 1 with cover art and comprehensive release information. labelName can be a string (auto-converted) or sublabel ObjectId."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Step 2 - Tracks & Audio",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tracks\": [\n    {\n      \"trackLink\": \"https://example.com/track1.mp3\",\n      \"trackName\": \"Amazing Song Title\",\n      \"mixVersion\": \"Radio Edit\",\n      \"primaryArtists\": [\"Main Artist\"],\n      \"featuringArtists\": [\"Featured Artist\"],\n      \"contributorsToSoundRecording\": [\n        {\n          \"year\": 2025,\n          \"text\": \"Produced by John Producer\"\n        }\n      ],\n      \"contributorsToMusicalWork\": [\n        {\n          \"year\": 2025,\n          \"text\": \"Written by Jane Writer\"\n        }\n      ],\n      \"needsISRC\": false,\n      \"isrcCode\": \"\",\n      \"previewStartTiming\": 30,\n      \"callertuneStartTiming\": 45,\n      \"primaryGenre\": \"bollywood\",\n      \"secondaryGenre\": \"romantic\",\n      \"hasHumanVocals\": true,\n      \"isAvailableForDownload\": true\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}/step2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}",
+								"step2"
+							]
+						},
+						"description": "Update step 2 with track details and audio files. Single/Ringtone releases allow only 1 track."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Step 3 - Delivery & Rights",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"deliveryDetails\": {\n    \"forFutureRelease\": \"2025-12-25T00:00:00Z\",\n    \"forPastRelease\": null\n  },\n  \"territorialRights\": {\n    \"territories\": [\"india\", \"united_states\", \"united_kingdom\"],\n    \"isWorldwide\": false\n  },\n  \"distributionPartners\": [\"spotify\", \"apple_music\", \"youtube_music\", \"jiosaavn\", \"wynk\"],\n  \"copyrightOptions\": {\n    \"proceedWithoutCopyright\": false,\n    \"copyrightDocumentLink\": \"https://example.com/copyright.pdf\",\n    \"ownsCopyrights\": true,\n    \"ownedCopyrightDocumentLink\": \"https://example.com/ownership-cert.pdf\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}/step3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}",
+								"step3"
+							]
+						},
+						"description": "Update step 3 with delivery dates, territorial rights, distribution partners, and copyright information."
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Release for Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}/submit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}",
+								"submit"
+							]
+						},
+						"description": "Submit completed advanced release for admin review. All 3 steps must be completed."
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Advanced Releases",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/my-releases?page=1&limit=10&sortBy=createdAt&sortOrder=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"my-releases"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"disabled": true,
+									"description": "Filter by status: draft, submitted, under_review, processing, published, live, rejected"
+								},
+								{
+									"key": "releaseType",
+									"value": "single",
+									"disabled": true,
+									"description": "Filter by type: single, album, mini_album, ringtone_release"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt",
+									"description": "Sort by: createdAt, updatedAt, releaseName"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"description": "asc or desc"
+								}
+							]
+						},
+						"description": "Get user's advanced releases with pagination, filtering, and sorting. Includes step progress and next step information."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Advanced Release Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}"
+							]
+						},
+						"description": "Get detailed information about a specific advanced release including all steps data."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Advanced Release",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}"
+							]
+						},
+						"description": "Delete an advanced release (soft delete). Not allowed for live releases."
+					},
+					"response": []
+				},
+				{
+					"name": "Request Release Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reason\": \"Need to update track information\",\n  \"changes\": \"Want to change the primary artist name and update album artwork\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}/request-update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}",
+								"request-update"
+							]
+						},
+						"description": "Request update for a live or published advanced release."
+					},
+					"response": []
+				},
+				{
+					"name": "Request Release Takedown",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reason\": \"Copyright issues need to be resolved\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/advance-releases/{{advanceReleaseId}}/request-takedown",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"advance-releases",
+								"{{advanceReleaseId}}",
+								"request-takedown"
+							]
+						},
+						"description": "Request takedown of a live or published advanced release from all distribution platforms."
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Subscription Management",
 			"item": [
 				{

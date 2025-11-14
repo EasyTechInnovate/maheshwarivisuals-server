@@ -68,13 +68,15 @@ export default {
             'basic_single': 'RE-B-S-',
             'basic_album': 'RE-B-A-',
             'advance_single': 'RE-A-S-',
-            'advance_album': 'RE-A-A-'
+            'advance_album': 'RE-A-A-',
+            'advance_mini_album': 'RE-A-MA-',
+            'advance_ringtone_release': 'RE-A-R-'
         }
 
         const key = `${releaseType}_${trackType}`
         const prefix = prefixes[key]
         if (!prefix) {
-            throw new Error('Invalid release type or track type for release ID generation')
+            throw new Error(`Invalid release type or track type for release ID generation. Received: ${key}`)
         }
 
         const latestRelease = await ReleaseModel.findOne({

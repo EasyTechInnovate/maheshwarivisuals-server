@@ -8,6 +8,12 @@ const router = Router()
 
 router.route('/self').get(advanceReleaseController.self)
 
+router.route('/sublabels')
+    .get(
+        authentication,
+        advanceReleaseController.getUserSublabels
+    )
+
 router.route('/create')
     .post(
         authentication,

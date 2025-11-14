@@ -431,7 +431,7 @@ advancedReleaseSchema.virtual('trackCount').get(function() {
 
 advancedReleaseSchema.pre('save', async function(next) {
     if (this.isNew && !this.releaseId) {
-        this.releaseId = await quicker.generateReleaseId(this.releaseType, 'album', this.constructor)
+        this.releaseId = await quicker.generateReleaseId('advance', this.releaseType, this.constructor)
     }
     next()
 })

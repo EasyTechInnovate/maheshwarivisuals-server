@@ -1,10 +1,12 @@
 import AdvancedRelease from '../../model/advanced-release.model.js'
 import User from '../../model/user.model.js'
+import Sublabel from '../../model/sublabel.model.js'
 import { EReleaseStatus, EAdvancedReleaseStep, EAdvancedReleaseType } from '../../constant/application.js'
 import responseMessage from '../../constant/responseMessage.js'
 import httpResponse from '../../util/httpResponse.js'
 import httpError from '../../util/httpError.js'
 import quicker from '../../util/quicker.js'
+import { getUserDefaultSublabel, getUserActiveSublabels } from '../../util/sublabelHelper.js'
 
 const getNextStepInfo = (release) => {
     if (!release.step1.isCompleted) {
@@ -104,7 +106,7 @@ export default {
                 )
             }
 
-            const releaseId = await quicker.generateReleaseId(releaseType, 'album', AdvancedRelease)
+            const releaseId = await quicker.generateReleaseId('advance',releaseType, AdvancedRelease)
             
             const release = new AdvancedRelease({
                 releaseId,
@@ -174,6 +176,24 @@ export default {
             }
 
             if (releaseInfo) {
+                // Handle labelName - if not provided or is a string, use user's default sublabel
+                let labelNameId = releaseInfo.labelName
+
+                if (!labelNameId || typeof labelNameId === 'string') {
+                    // Try to get user's default sublabel
+                    const defaultSublabel = await getUserDefaultSublabel(userId)
+
+                    if (defaultSublabel) {
+                        labelNameId = defaultSublabel.id
+                    } else {
+                        // Fallback to the global default sublabel
+                        const maheshwariSublabel = await Sublabel.findOne({ name: 'Maheshwari Visual', isActive: true })
+                        if (maheshwariSublabel) {
+                            labelNameId = maheshwariSublabel._id
+                        }
+                    }
+                }
+
                 release.step1.releaseInfo = {
                     releaseName: releaseInfo.releaseName,
                     releaseVersion: releaseInfo.releaseVersion,
@@ -186,7 +206,7 @@ export default {
                     upcCode: releaseInfo.upcCode,
                     primaryGenre: releaseInfo.primaryGenre,
                     secondaryGenre: releaseInfo.secondaryGenre,
-                    labelName: releaseInfo.labelName,
+                    labelName: labelNameId,
                     cLine: releaseInfo.cLine,
                     pLine: releaseInfo.pLine,
                     releasePricingTier: releaseInfo.releasePricingTier
@@ -667,6 +687,26 @@ export default {
                 {
                     releaseId: release.releaseId,
                     takeDown: release.takeDown
+                }
+            )
+        } catch (err) {
+            return httpError(next, err, req, 500)
+        }
+    },
+
+    async getUserSublabels(req, res, next) {
+        try {
+            const userId = req.authenticatedUser._id
+
+            const sublabels = await getUserActiveSublabels(userId)
+
+            return httpResponse(
+                req,
+                res,
+                200,
+                responseMessage.SUCCESS,
+                {
+                    sublabels
                 }
             )
         } catch (err) {

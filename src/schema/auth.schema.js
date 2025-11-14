@@ -50,6 +50,8 @@ const register = z.object({
     })
 })
 
+
+
 const login = z.object({
     body: z.object({
         emailAddress: z.string().email('Invalid email address').transform(val => val.toLowerCase()),
