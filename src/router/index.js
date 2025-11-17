@@ -18,6 +18,7 @@ import supportTicketRouter from './support-ticket.route.js';
 import mcnRouter from './mcn.route.js';
 import marketingRouter from './marketing.route.js';
 import fanLinkRouter from './fan-link.route.js';
+import uploadRoutes from './upload.route.js';
 
 const router = Router();
 
@@ -40,6 +41,7 @@ router.use('/support-tickets', supportTicketRouter);
 router.use('/mcn', mcnRouter);
 router.use('/marketing', marketingRouter);
 router.use('/fan-links', fanLinkRouter);
+router.use('/upload', uploadRoutes)
 
 
 export default router;
