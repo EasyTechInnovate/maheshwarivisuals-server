@@ -52,18 +52,32 @@ export const validateRequest = (schema, target = 'body') => {
 
         if (!result.success) {
             console.log('Validation errors:', result.error.format())
-            
-            const formattedErrors = Object.entries(result.error.format())
-                .filter(([key]) => key !== "_errors")
-                .map(([field, error]) => ({
-                    field,
-                    message: Array.isArray(error) ? error.join(", ") : error._errors?.join(", ") || "Invalid input"
-                }));
+
+            // Recursively flatten nested error objects to show exact field paths
+            const flattenErrors = (obj, prefix = '') => {
+                let errors = [];
+
+                for (const [key, value] of Object.entries(obj)) {
+                    if (key === '_errors' && Array.isArray(value) && value.length > 0) {
+                        errors.push({
+                            field: prefix || 'root',
+                            message: value.join(', ')
+                        });
+                    } else if (typeof value === 'object' && value !== null) {
+                        const nestedPath = prefix ? `${prefix}.${key}` : key;
+                        errors = errors.concat(flattenErrors(value, nestedPath));
+                    }
+                }
+
+                return errors;
+            };
+
+            const formattedErrors = flattenErrors(result.error.format());
 
             return res.status(400).json({
                 success: false,
                 message: "Validation Failed.",
-                errors: formattedErrors
+                errors: formattedErrors.length > 0 ? formattedErrors : [{ field: 'unknown', message: 'Invalid input' }]
             });
         }
 
