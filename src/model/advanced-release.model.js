@@ -11,11 +11,11 @@ import {
 } from '../constant/application.js'
 
 const contributorSchema = new Schema({
-    year: {
-        type: Number,
+    profession: {
+        type: String,
         required: true,
-        min: 1900,
-        max: new Date().getFullYear() + 10
+        trim: true,
+        maxlength: 100
     },
     text: {
         type: String,
@@ -91,6 +91,11 @@ const trackSchema = new Schema({
     hasHumanVocals: {
         type: Boolean,
         default: true
+    },
+    vocalType: {
+        type: String,
+        trim: true,
+        maxlength: 200
     },
     isAvailableForDownload: {
         type: Boolean,

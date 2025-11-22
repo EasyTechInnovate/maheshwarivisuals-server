@@ -113,7 +113,10 @@ const getReleases = z.object({
         page: z.string().optional().transform(val => val ? parseInt(val) : 1),
         limit: z.string().optional().transform(val => val ? parseInt(val) : 10),
         status: z.string().optional(),
-        userId: z.string().optional()
+        userId: z.string().optional(),
+        search: z.string().optional(),
+        sortBy: z.enum(['createdAt', 'updatedAt', 'releaseName']).default('createdAt'),
+        sortOrder: z.enum(['asc', 'desc']).default('desc')
     })
 })
 

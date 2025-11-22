@@ -69,6 +69,7 @@ export default {
             'basic_album': 'RE-B-A-',
             'advance_single': 'RE-A-S-',
             'advance_album': 'RE-A-A-',
+            'advance_ep': 'RE-A-EP-',
             'advance_mini_album': 'RE-A-MA-',
             'advance_ringtone_release': 'RE-A-R-'
         }

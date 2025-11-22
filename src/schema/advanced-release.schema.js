@@ -93,14 +93,35 @@ const updateStep3 = z.object({
         territorialRights: z.object({
             territories: z.array(z.enum(Object.values(ETerritories))).optional(),
             isWorldwide: z.boolean().default(false)
-        }).optional(),
+        }).optional().refine(
+            (data) => {
+                if (!data) return true;
+                if (data.isWorldwide) return true;
+                return data.territories && data.territories.length > 0;
+            },
+            { message: 'Territories are required when not selecting worldwide release' }
+        ),
         distributionPartners: z.array(z.enum(Object.values(EDistributionPartners))).min(1, 'At least one distribution partner required').optional(),
         copyrightOptions: z.object({
             proceedWithoutCopyright: z.boolean().default(false),
-            copyrightDocumentLink: z.string().url('Invalid copyright document URL').optional(),
+            copyrightDocumentLink: z.string().url('Invalid copyright document URL').optional().nullable(),
             ownsCopyrights: z.boolean().default(false),
-            ownedCopyrightDocumentLink: z.string().url('Invalid owned copyright document URL').optional()
-        }).optional()
+            ownedCopyrightDocumentLink: z.string().url('Invalid owned copyright document URL').optional().nullable()
+        }).optional().refine(
+            (data) => {
+                if (!data) return true;
+                if (data.proceedWithoutCopyright) return true;
+                return data.copyrightDocumentLink;
+            },
+            { message: 'Copyright document link is required when not proceeding without copyright' }
+        ).refine(
+            (data) => {
+                if (!data) return true;
+                if (!data.ownsCopyrights) return true;
+                return data.ownedCopyrightDocumentLink;
+            },
+            { message: 'Owned copyright document link is required when claiming copyright ownership' }
+        )
     })
 })
 
@@ -147,6 +168,7 @@ const getMyReleases = z.object({
         limit: z.string().regex(/^\d+$/, 'Limit must be a number').optional(),
         status: z.enum(['draft', 'submitted', 'under_review', 'processing', 'published', 'live', 'rejected']).optional(),
         releaseType: z.enum(Object.values(EAdvancedReleaseType)).optional(),
+        search: z.string().optional(),
         sortBy: z.enum(['createdAt', 'updatedAt', 'releaseName']).default('createdAt'),
         sortOrder: z.enum(['asc', 'desc']).default('desc')
     })
