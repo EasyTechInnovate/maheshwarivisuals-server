@@ -14,15 +14,12 @@ app.use(helmet())
 const allowedOrigins = [
     config.security.corsOrigin,
     'http://localhost:3000',
+    'http://localhost:5173',
     'http://localhost:8000',
     'http://localhost:8001',
-    'https://localhost:5173',
     'https://prod-fd-md.manishdashsharma.site',
-    'https://qa-fd-md.manishdashsharma.site/',
-    'https://qa-fd-md.manishdashsharma.site/app',
-    'https://prod-fd-md.manishdashsharma.site/app',
-    'https://qa-fd-md.manishdashsharma.site/admin',
-    'https://prod-fd-md.manishdashsharma.site/admin'
+    'https://qa-fd-md.manishdashsharma.site',
+    'https://mv.easytechinnovate.site'
 ]
 
 
