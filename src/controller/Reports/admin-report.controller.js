@@ -7,7 +7,7 @@ import responseMessage from '../../constant/responseMessage.js'
 import httpResponse from '../../util/httpResponse.js'
 import httpError from '../../util/httpError.js'
 
-export default {
+const adminReportController = {
     async uploadReport(req, res, next) {
         try {
             const { monthId, reportType } = req.body
@@ -57,12 +57,12 @@ export default {
                 filePath,
                 fileSize,
                 status: EReportStatus.PENDING,
-                uploadedBy: req.user._id
+                uploadedBy: req.authenticatedUser._id
             })
 
             await reportData.save()
 
-            this.processCsvInBackground(reportData._id, filePath, reportType)
+            adminReportController.processCsvInBackground(reportData._id, filePath, reportType)
 
             httpResponse(
                 req,
@@ -364,3 +364,5 @@ export default {
         }
     }
 }
+
+export default adminReportController
